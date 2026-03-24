@@ -1,0 +1,42 @@
+# IDE & Editor
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Empty/Unused directories
+assets/
+public/
+docs/
+scripts/
+
+# Node (if adding build tools later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log
+
+# OS temp files
+.temporary/
+.cache/
+
+# Keep everything else (fonts, images, HTML, etc.)
+!fonts/
+!images/
+!*.html
+!*.js
+!*.json
+!*.md
