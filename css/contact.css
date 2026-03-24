@@ -13,3 +13,5 @@
 @import url('');
 
 @media (min-width: 1536px){.x .c1-g{font-size:18px}}@media (min-width: 1536px){.x .c1-9q{font-size:14px}}@media (min-width: 1536px){.x .c1-a7{font-size:20px}}@media (min-width: 1536px){.x .c1-ac{font-size:64px}}@media (min-width: 1536px){.x .c1-bc{font-size:23px}}
+
+input[name="_app_id"] { display: none; }
