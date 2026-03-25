@@ -1,0 +1,56 @@
+@use 'variables' as *;
+
+// ─── Cookie Banner ────────────────────────────────────────────────────────────
+
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-primary-light;
+  color: $color-text;
+  padding: $space-3 $space-4;
+  z-index: 9999;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+
+  &.is-visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-3;
+  }
+
+  &__message {
+    flex: 1;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: $color-text;
+    min-width: 200px;
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wider;
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+    padding: $space-2 $space-4;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+  }
+}

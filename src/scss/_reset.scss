@@ -1,0 +1,210 @@
+@use 'variables' as *;
+
+// ─── Reset & Base ─────────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-loose;
+  color: $color-text;
+  background-color: $color-primary;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Block-level semantics for HTML5 elements
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+// Media
+img, video, canvas, audio, progress {
+  display: block;
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+img {
+  height: auto;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+// Typography reset
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+p {
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-wrap: pretty;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+}
+
+// Links
+a {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: inherit;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+// Form elements
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled {
+  cursor: default;
+}
+
+input {
+  line-height: normal;
+  border-style: none;
+  padding: 0.5em;
+  vertical-align: middle;
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  &[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+}
+
+textarea {
+  overflow: auto;
+  border: 0;
+  line-height: 1.75;
+  padding: 0.5em;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  border: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: 700;
+}

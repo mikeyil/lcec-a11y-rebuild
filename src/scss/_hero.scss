@@ -1,0 +1,119 @@
+@use 'variables' as *;
+
+// ─── Hero Section ─────────────────────────────────────────────────────────────
+
+.hero {
+  background-color: $color-primary;
+  color: $color-text-on-dark;
+  padding: $space-5 0;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    padding: $space-6 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: $space-5;
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    width: 40%;
+    max-width: 280px;
+    margin-bottom: $space-4;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      margin-bottom: 0;
+      width: 30%;
+      max-width: 320px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    text-align: center;
+    padding-left: $space-4;
+    padding-right: $space-4;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      text-align: left;
+      padding: 0;
+      max-width: 600px;
+    }
+  }
+
+  &__eyebrow {
+    font-family: $font-heading;
+    font-size: $font-size-base;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-primary-light;
+    margin-bottom: $space-2;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    line-height: $line-height-snug;
+    color: $color-white;
+    margin-bottom: $space-3;
+    text-wrap: pretty;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      font-size: $font-size-5xl;
+    }
+
+    @media (min-width: #{$bp-desktop + 1px}) {
+      font-size: $font-size-6xl;
+    }
+
+    @media (min-width: #{$bp-wide + 1px}) {
+      font-size: $font-size-7xl;
+    }
+  }
+
+  &__subheading {
+    font-family: $font-display;
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+    color: $color-primary-light;
+    margin-bottom: $space-5;
+    text-wrap: pretty;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    justify-content: center;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      justify-content: flex-start;
+    }
+  }
+}

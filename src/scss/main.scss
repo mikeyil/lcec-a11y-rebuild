@@ -1,0 +1,28 @@
+// ─── LC Education Consulting — Main Stylesheet ────────────────────────────────
+// Import order: tokens → reset → layout → patterns → components → pages → utils
+
+// Foundation
+@use 'variables';
+@use 'reset';
+
+// Structure
+@use 'layout';
+@use 'typography';
+
+// Navigation
+@use 'nav';
+
+// Sections & patterns
+@use 'hero';
+@use 'sections';
+
+// Components
+@use 'components';
+@use 'forms';
+
+// Chrome
+@use 'footer';
+@use 'cookie-banner';
+
+// Utilities (last — highest specificity wins)
+@use 'utilities';

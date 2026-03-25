@@ -1,0 +1,147 @@
+@use 'variables' as *;
+
+// ─── Layout & Containers ──────────────────────────────────────────────────────
+
+.page-wrap {
+  min-height: 100vh;
+  background-color: $color-primary;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $space-4;
+  padding-right: $space-4;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    max-width: $container-md;
+  }
+
+  @media (min-width: #{$bp-desktop + 1px}) {
+    max-width: $container-lg;
+  }
+
+  @media (min-width: #{$bp-wide + 1px}) {
+    max-width: $container-xl;
+  }
+}
+
+.container--full {
+  max-width: 100%;
+  padding-left: $space-4;
+  padding-right: $space-4;
+}
+
+// ─── Sections ─────────────────────────────────────────────────────────────────
+
+.section {
+  padding-top: $space-6;
+  padding-bottom: $space-6;
+
+  @media (max-width: $bp-mobile) {
+    padding-top: $space-5;
+    padding-bottom: $space-5;
+  }
+}
+
+.section--sm {
+  padding-top: $space-4;
+  padding-bottom: $space-4;
+}
+
+.section--lg {
+  padding-top: $space-8;
+  padding-bottom: $space-8;
+
+  @media (max-width: $bp-mobile) {
+    padding-top: $space-6;
+    padding-bottom: $space-6;
+  }
+}
+
+.section--green {
+  background-color: $color-primary;
+  color: $color-text-on-dark;
+}
+
+.section--dark {
+  background-color: $color-primary-dark;
+  color: $color-text-on-dark;
+}
+
+.section--alt {
+  background-color: $color-bg-section-alt;
+  color: $color-text-on-dark;
+}
+
+.section--white {
+  background-color: $color-white;
+  color: $color-text;
+}
+
+.section--light {
+  background-color: $color-primary-light;
+  color: $color-text;
+}
+
+// ─── Flex / Grid Helpers ───────────────────────────────────────────────────────
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @media (max-width: $bp-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}

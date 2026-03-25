@@ -1,0 +1,77 @@
+// ─── Colors ───────────────────────────────────────────────────────────────────
+$color-primary:        #556b2f;   // rgb(85,107,47) — olive green
+$color-primary-dark:   #364519;   // rgb(54,69,28)
+$color-primary-darker: #232d10;   // rgb(35,45,16)
+$color-primary-light:  #e3fcc2;   // rgb(227,252,194) — light green tint
+$color-accent:         #4682b4;   // rgb(70,130,180) — steel blue (CTA alt)
+$color-bg-section-alt: #4a5e29;   // rgb(74,94,41) — slightly darker green section
+
+$color-white:          #ffffff;
+$color-text:           #151515;   // rgb(21,21,21)
+$color-text-medium:    #575757;   // rgb(87,87,87)
+$color-text-light:     #5e5e5e;   // rgb(94,94,94)
+$color-text-on-dark:   #f7f7f6;   // rgb(247,247,246)
+$color-border:         rgba(185, 185, 185, 0.5);
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+$font-body:    'Lato', arial, sans-serif;
+$font-heading: 'Cabin', arial, sans-serif;
+$font-display: 'Bitter', georgia, serif;
+
+$font-size-base:  16px;
+$font-size-sm:    14px;
+$font-size-xs:    12px;
+$font-size-lg:    18px;
+$font-size-xl:    20px;
+$font-size-2xl:   22px;
+$font-size-3xl:   28px;
+$font-size-4xl:   32px;
+$font-size-5xl:   38px;
+$font-size-6xl:   44px;
+$font-size-7xl:   48px;
+
+$line-height-tight:  1;
+$line-height-snug:   1.25;
+$line-height-base:   1.4;
+$line-height-loose:  1.5;
+
+$letter-spacing-nav:   0.214em;
+$letter-spacing-wide:  0.136em;
+$letter-spacing-wider: 2px;
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+$space-1:   4px;
+$space-2:   8px;
+$space-3:   16px;
+$space-4:   24px;
+$space-5:   32px;
+$space-6:   40px;
+$space-7:   48px;
+$space-8:   56px;
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+$container-md:   984px;
+$container-lg:  1160px;
+$container-xl:  1280px;
+
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+$bp-mobile:   767px;
+$bp-tablet:  1023px;
+$bp-desktop: 1279px;
+$bp-wide:    1535px;
+
+// ─── Nav ──────────────────────────────────────────────────────────────────────
+$nav-height:        56px;
+$nav-dropdown-z:    1003;
+$nav-mobile-z:      10002;
+$nav-font-size:     14px;
+
+// ─── Transitions ──────────────────────────────────────────────────────────────
+$transition-base:   all 0.3s ease;
+$transition-nav:    transform 0.3s ease-in-out;
+$transition-slow:   all 0.5s;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+$shadow-dropdown:   0 3px 6px 3px rgba(0, 0, 0, 0.16);
+$shadow-card:       0 2px 6px 0 rgba(0, 0, 0, 0.2);
+$shadow-hover:      0 10px 10px -10px rgba(0, 0, 0, 0.5);

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="page-wrap">
+      {% include "partials/header.njk" %}
+      <main id="main-content" role="main">
+        {{ content | safe }}
+      </main>
+      {% include "partials/footer.njk" %}
+    </div>
+    {% include "partials/cookie-banner.njk" %}
+    <script src="/js/main.js"></script>
+  </body>
+</html>

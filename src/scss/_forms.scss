@@ -1,0 +1,139 @@
+@use 'variables' as *;
+
+// ─── Forms ────────────────────────────────────────────────────────────────────
+
+.contact-form-section {
+  background-color: $color-white;
+  color: $color-text;
+  padding: $space-6 $space-4;
+
+  @media (max-width: $bp-mobile) {
+    padding: $space-5 $space-3;
+  }
+}
+
+.contact-form {
+  max-width: 680px;
+  margin: 0 auto;
+
+  &__heading {
+    font-family: $font-display;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: $space-5;
+    text-align: center;
+  }
+}
+
+.form-field {
+  margin-bottom: $space-4;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  font-family: $font-heading;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+  color: $color-text;
+  margin-bottom: $space-1;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  color: $color-text;
+  background-color: $color-white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  line-height: normal;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 1px;
+    border-color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $color-text-medium;
+  }
+}
+
+.form-textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  color: $color-text;
+  background-color: $color-white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  line-height: 1.75;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 1px;
+    border-color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $color-text-medium;
+  }
+}
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  color: $color-white;
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: $space-2 $space-5;
+  cursor: pointer;
+  transition: $transition-base;
+  width: 100%;
+
+  &:hover {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.form-privacy {
+  margin-top: $space-3;
+  font-size: $font-size-xs;
+  color: $color-text-medium;
+  text-align: center;
+
+  a {
+    color: $color-primary;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+// Honeypot field - hide from real users
+input[name="_app_id"] {
+  display: none;
+}

@@ -18,14 +18,17 @@ docs/
 scripts/
 fonts/
 
-# Node (if adding build tools later)
+# Node
 node_modules/
 npm-debug.log
 yarn-error.log
 
-# Build artifacts
+# Build output
 dist/
-build/
+
+# Sass cache
+.sass-cache/
+*.css.map
 
 # Logs
 *.log
@@ -33,10 +36,3 @@ build/
 # OS temp files
 .temporary/
 .cache/
-
-# Keep everything else (images, HTML, etc.)
-!images/
-!*.html
-!*.js
-!*.json
-!*.md

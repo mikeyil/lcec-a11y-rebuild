@@ -1,0 +1,99 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="header-logo-row">
+      <a href="/" class="logo" title="LC Education Consulting">
+        <h3 class="logo__text">LC Education Consulting</h3>
+      </a>
+      <div class="header-phone">
+        <a href="tel:8563104483">856-310-4483</a>
+      </div>
+    </div>
+    <div class="header-nav-row">
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/" class="nav__link" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/our-story/" class="nav__link" {% if page.url == "/our-story/" %}aria-current="page"{% endif %}>Our Story</a>
+          </li>
+          <li class="nav__item">
+            <a href="http://www.lauracantagallosportfolio.com/" class="nav__link" target="_blank" rel="noopener">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="/why-choose-us/" class="nav__link" {% if page.url == "/why-choose-us/" %}aria-current="page"{% endif %}>Why Choose Us</a>
+          </li>
+          <li class="nav__item">
+            <button class="nav__dropdown-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="nav-services-dropdown">
+              <span>Services</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </button>
+            <div id="nav-services-dropdown" class="nav__dropdown" role="region">
+              <ul class="nav__dropdown-list">
+                <li class="nav__dropdown-item">
+                  <a href="/accessibility-services/" class="nav__dropdown-link" {% if page.url == "/accessibility-services/" %}aria-current="page"{% endif %}>
+                    <span>Accessibility Services</span>
+                  </a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a href="/webinars-and-training/" class="nav__dropdown-link" {% if page.url == "/webinars-and-training/" %}aria-current="page"{% endif %}>
+                    <span>Webinars &amp; Training</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item">
+            <a href="/portfolio/" class="nav__link" {% if page.url == "/portfolio/" %}aria-current="page"{% endif %}>Portfolio</a>
+          </li>
+          <li class="nav__item">
+            <a href="/contact/" class="nav__link" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-nav__close" aria-label="Close navigation menu">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </svg>
+  </button>
+  <ul class="mobile-nav__list">
+    <li class="mobile-nav__item">
+      <a href="/" class="mobile-nav__link">Home</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/our-story/" class="mobile-nav__link">Our Story</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="http://www.lauracantagallosportfolio.com/" class="mobile-nav__link" target="_blank" rel="noopener">About</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/why-choose-us/" class="mobile-nav__link">Why Choose Us</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/accessibility-services/" class="mobile-nav__link">Accessibility Services</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/webinars-and-training/" class="mobile-nav__link">Webinars &amp; Training</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/portfolio/" class="mobile-nav__link">Portfolio</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a href="/contact/" class="mobile-nav__link">Contact</a>
+    </li>
+  </ul>
+</nav>

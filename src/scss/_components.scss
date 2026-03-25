@@ -1,0 +1,413 @@
+@use 'variables' as *;
+
+// ─── Buttons ──────────────────────────────────────────────────────────────────
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: $space-2 $space-3;
+  line-height: $line-height-tight;
+  transition: $transition-base;
+  white-space: nowrap;
+
+  &:focus {
+    outline: 2px solid $color-primary-light;
+    outline-offset: 2px;
+  }
+}
+
+.btn--primary {
+  background-color: $color-white;
+  color: $color-primary;
+  border-color: $color-white;
+
+  &:hover {
+    background-color: $color-primary-light;
+    border-color: $color-primary-light;
+    color: $color-primary-dark;
+  }
+}
+
+.btn--secondary {
+  background-color: $color-primary;
+  color: $color-white;
+  border-color: $color-primary-light;
+
+  &:hover {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
+  }
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: $color-white;
+  border-color: $color-white;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  color: $color-primary;
+  border-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  align-items: center;
+}
+
+// ─── Announcement Bar ─────────────────────────────────────────────────────────
+
+.announcement-bar {
+  background-color: $color-primary-dark;
+  color: $color-white;
+  padding: $space-1 $space-3;
+  transition: $transition-slow;
+
+  &:hover {
+    filter: invert(0.2);
+  }
+
+  &__inner {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-1 $space-6;
+
+    @media (max-width: $bp-mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  p {
+    font-family: $font-heading;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    text-align: center;
+    white-space: pre-line;
+    text-wrap: pretty;
+    color: $color-white;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      font-size: $font-size-base;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+// ─── Statistics ───────────────────────────────────────────────────────────────
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+  margin-top: $space-4;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: $space-3;
+  }
+}
+
+.stat {
+  text-align: center;
+  padding: $space-4;
+
+  &__value {
+    font-family: $font-heading;
+    font-size: $font-size-5xl;
+    font-weight: 700;
+    color: $color-white;
+    line-height: $line-height-tight;
+    margin-bottom: $space-2;
+
+    @media (min-width: #{$bp-desktop + 1px}) {
+      font-size: $font-size-6xl;
+    }
+  }
+
+  &__label {
+    font-family: $font-body;
+    font-size: $font-size-base;
+    color: $color-text-on-dark;
+    line-height: $line-height-base;
+  }
+}
+
+// ─── Testimonial / Quote ──────────────────────────────────────────────────────
+
+.quote-block {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: $space-5 $space-4;
+
+  &__text {
+    font-family: $font-display;
+    font-size: $font-size-lg;
+    line-height: $line-height-loose;
+    color: $color-text-on-dark;
+    font-style: italic;
+    margin-bottom: $space-3;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__attribution {
+    font-family: $font-heading;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-primary-light;
+  }
+}
+
+// ─── Service Cards ────────────────────────────────────────────────────────────
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+  margin-top: $space-5;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background-color: $color-white;
+  color: $color-text;
+  padding: $space-5;
+  box-shadow: $shadow-card;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: $space-3;
+    line-height: $line-height-snug;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+    margin-bottom: $space-3;
+    color: $color-text-medium;
+  }
+
+  &__features {
+    list-style: disc;
+    padding-left: 1.3em;
+    margin: $space-3 0;
+
+    li {
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      color: $color-text;
+      margin-bottom: $space-1;
+    }
+  }
+
+  &__case-study {
+    margin-top: $space-3;
+    font-size: $font-size-sm;
+    font-style: italic;
+    color: $color-text-medium;
+  }
+}
+
+// ─── Training Category Blocks ─────────────────────────────────────────────────
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+  margin-top: $space-4;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.training-card {
+  background-color: $color-white;
+  color: $color-text;
+  padding: $space-5;
+  box-shadow: $shadow-card;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: $space-2;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+    color: $color-text-medium;
+  }
+}
+
+// ─── Profile / Background List ────────────────────────────────────────────────
+
+.credentials-list {
+  list-style: disc;
+  padding-left: 1.3em;
+  margin: $space-4 0;
+
+  li {
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+    color: $color-text-on-dark;
+    margin-bottom: $space-2;
+  }
+}
+
+// ─── Portfolio Projects ───────────────────────────────────────────────────────
+
+.portfolio-list {
+  margin-top: $space-4;
+
+  li {
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+    color: $color-text-on-dark;
+    margin-bottom: $space-3;
+    padding-left: $space-3;
+    border-left: 3px solid $color-primary-light;
+  }
+}
+
+// ─── Contact Info Block ───────────────────────────────────────────────────────
+
+.contact-info {
+  &__heading {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-text-on-dark;
+    margin-bottom: $space-3;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    margin-bottom: $space-3;
+  }
+
+  &__label {
+    font-family: $font-heading;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-primary-light;
+    min-width: 80px;
+  }
+
+  &__value {
+    font-size: $font-size-base;
+    color: $color-text-on-dark;
+
+    a {
+      color: $color-text-on-dark;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-primary-light;
+      }
+    }
+  }
+}
+
+// ─── CTA Block ────────────────────────────────────────────────────────────────
+
+.cta-block {
+  text-align: center;
+  padding: $space-6 $space-4;
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $color-text-on-dark;
+    margin-bottom: $space-2;
+  }
+
+  &__subheading {
+    font-family: $font-display;
+    font-size: $font-size-lg;
+    color: $color-primary-light;
+    margin-bottom: $space-4;
+  }
+}
+
+// ─── Social Media ─────────────────────────────────────────────────────────────
+
+.social-links {
+  display: flex;
+  gap: $space-3;
+  justify-content: center;
+  margin-top: $space-3;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  text-decoration: none;
+  transition: $transition-base;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &:hover {
+    color: $color-primary-light;
+  }
+}
+
+// ─── Divider ──────────────────────────────────────────────────────────────────
+
+.divider {
+  border: 0;
+  border-bottom: 1px solid rgba($color-white, 0.25);
+  margin: $space-5 0;
+}

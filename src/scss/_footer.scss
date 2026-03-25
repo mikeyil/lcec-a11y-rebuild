@@ -1,0 +1,88 @@
+@use 'variables' as *;
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+.site-footer {
+  background-color: $color-primary-darker;
+  color: $color-text-on-dark;
+  padding: $space-5 0 $space-4;
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.footer-nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2 $space-3;
+    justify-content: center;
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    // no extra styles needed
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-text-on-dark;
+    text-decoration: none;
+    letter-spacing: $letter-spacing-wider;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $color-primary-light;
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: $space-3;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: $color-text-on-dark;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $color-primary-light;
+    }
+
+    svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-size: $font-size-xs;
+  color: rgba($color-text-on-dark, 0.7);
+  padding-top: $space-3;
+  border-top: 1px solid rgba($color-white, 0.15);
+  margin-top: $space-2;
+}

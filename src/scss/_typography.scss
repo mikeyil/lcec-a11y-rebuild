@@ -1,0 +1,155 @@
+@use 'variables' as *;
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+
+// Heading scale
+h1, .h1 {
+  font-size: $font-size-3xl;
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: $line-height-tight;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    font-size: $font-size-5xl;
+  }
+
+  @media (min-width: #{$bp-desktop + 1px}) {
+    font-size: $font-size-6xl;
+  }
+
+  @media (min-width: #{$bp-wide + 1px}) {
+    font-size: $font-size-7xl;
+  }
+}
+
+h2, .h2 {
+  font-size: $font-size-2xl;
+  font-family: $font-heading;
+  font-weight: 700;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    font-size: $font-size-5xl;
+  }
+
+  @media (min-width: #{$bp-desktop + 1px}) {
+    font-size: $font-size-6xl;
+  }
+}
+
+h3, .h3 {
+  font-size: $font-size-xl;
+  font-family: $font-heading;
+  font-weight: 700;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h4, .h4 {
+  font-size: $font-size-lg;
+  font-family: $font-heading;
+  font-weight: 700;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    font-size: $font-size-xl;
+  }
+}
+
+h5, .h5 {
+  font-size: $font-size-base;
+  font-family: $font-heading;
+  font-weight: 700;
+}
+
+h6, .h6 {
+  font-size: $font-size-sm;
+  font-family: $font-heading;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+// Body text
+.text-lg    { font-size: $font-size-lg; }
+.text-sm    { font-size: $font-size-sm; }
+.text-xs    { font-size: $font-size-xs; }
+
+// Alignment
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+// Color shortcuts
+.text-white   { color: $color-white; }
+.text-primary { color: $color-primary; }
+.text-muted   { color: $color-text-medium; }
+.text-on-dark { color: $color-text-on-dark; }
+
+// Display / accent font
+.font-display {
+  font-family: $font-display;
+}
+
+// Section headings
+.section-heading {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: $line-height-snug;
+  margin-bottom: $space-3;
+}
+
+.section-subheading {
+  font-family: $font-display;
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  margin-bottom: $space-4;
+}
+
+// Eyebrow / label above heading
+.eyebrow {
+  font-family: $font-heading;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  margin-bottom: $space-2;
+}
+
+// Announcement / callout text
+.announcement-text {
+  font-family: $font-heading;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  text-align: center;
+  font-size: $font-size-sm;
+
+  @media (min-width: #{$bp-mobile + 1px}) {
+    font-size: $font-size-base;
+  }
+}
+
+// Rich text content (CMS-authored content)
+.rich-text {
+  line-height: $line-height-loose;
+
+  p + p {
+    margin-top: $space-3;
+  }
+
+  ul, ol {
+    list-style: revert;
+    padding-left: 1.3em;
+    margin: $space-3 $space-3;
+    text-align: left;
+    text-wrap: pretty;
+  }
+
+  li + li {
+    margin-top: $space-1;
+  }
+
+  strong { font-weight: 700; }
+  em     { font-style: italic; }
+}

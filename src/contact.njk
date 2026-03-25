@@ -1,0 +1,121 @@
+---
+layout: base.njk
+title: Contact
+description: "Connect with LC Education Consulting. Fill out the contact form or schedule a free 30-minute discovery call."
+---
+
+<section class="page-title">
+  <div class="container">
+    <h1 class="page-title__heading">Start a Conversation</h1>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="contact-info">
+      <h2 class="contact-info__heading">Office</h2>
+      <div class="contact-info__row">
+        <span class="contact-info__label">Location</span>
+        <span class="contact-info__value">Collingswood, New Jersey</span>
+      </div>
+      <div class="contact-info__row">
+        <span class="contact-info__label">Phone</span>
+        <span class="contact-info__value">
+          <a href="tel:8563104483">856-310-4483</a>
+        </span>
+      </div>
+      <div class="contact-info__row">
+        <span class="contact-info__label">E-Mail</span>
+        <span class="contact-info__value">
+          <a href="mailto:laura@lceducationconsulting.com">laura@lceducationconsulting.com</a>
+        </span>
+      </div>
+    </div>
+    <p class="intro-section__body mt-5">Looking to connect with a trusted accessibility consultant? You&rsquo;re in the right place! LC Education Consulting is here to answer questions, learn about your goals, and connect you with the right services for your organization.</p>
+    <p class="intro-section__body mt-4">To get started, fill out the contact form below or schedule a free 30-minute discovery call. We&rsquo;re happy to schedule a free consultation.</p>
+  </div>
+</section>
+
+<section class="contact-form-section">
+  <div class="container">
+    <form class="contact-form" aria-live="polite" action="#" method="post">
+      <h2 class="contact-form__heading">Let&rsquo;s Talk About Your Needs</h2>
+
+      {# Honeypot — hidden from real users #}
+      <input type="text" name="_app_id" autocomplete="off" tabindex="-1" value="" />
+
+      <div class="form-field">
+        <label class="form-label" for="org-name">Organization Name <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="text" id="org-name" name="org_name" required autocomplete="organization" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="your-name">Your Name <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="text" id="your-name" name="your_name" required autocomplete="name" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="phone">Phone Number <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="location">Location (City/State) <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="text" id="location" name="location" required />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="org-type">Type of Organization <span aria-hidden="true">*</span></label>
+        <textarea class="form-textarea" id="org-type" name="org_type" rows="4" required placeholder="School District / Company / Nonprofit / Higher Ed / Other"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="service-interest">Service Interest <span aria-hidden="true">*</span></label>
+        <textarea class="form-textarea" id="service-interest" name="service_interest" rows="4" required placeholder="Accessibility Evaluation / Website Remediation / Training &amp; Webinars / VPAT Writing / Other"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="description">Brief description of need <span aria-hidden="true">*</span></label>
+        <textarea class="form-textarea" id="description" name="description" rows="4" required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="contact-method">Preferred Contact Method <span aria-hidden="true">*</span></label>
+        <input class="form-input" type="text" id="contact-method" name="contact_method" required placeholder="Email / Phone / Either" />
+      </div>
+
+      <button type="submit" class="form-submit">Send</button>
+
+      <p class="form-privacy">
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        and
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+        apply.
+      </p>
+    </form>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container text-center">
+    <h2 class="section-heading text-white">LC Education Consulting</h2>
+    <p><a href="tel:8563104483" class="text-on-dark text-xl">856-310-4483</a></p>
+    <p><a href="mailto:laura@lceducationconsulting.com" class="text-on-dark">laura@lceducationconsulting.com</a></p>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="cta-block">
+      <h2 class="cta-block__heading">Ready to get started?</h2>
+      <p class="cta-block__subheading">Book a free 30-minute discovery call</p>
+      <a href="https://calendar.app.google/1HUZPbZWSLjXKS9b6" class="btn btn--primary" target="_blank" rel="noopener">Schedule Call</a>
+    </div>
+  </div>
+</section>
