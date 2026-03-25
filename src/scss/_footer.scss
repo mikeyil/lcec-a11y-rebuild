@@ -3,7 +3,7 @@
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 .site-footer {
-  background-color: $color-primary-darker;
+  background-color: $color-primary;
   color: $color-text-on-dark;
   padding: $space-5 0 $space-4;
   margin-top: auto;
@@ -14,13 +14,7 @@
   flex-direction: column;
   align-items: center;
   gap: $space-4;
-
-  @media (min-width: #{$bp-mobile + 1px}) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
+  text-align: center;
 }
 
 .footer-nav {
@@ -29,10 +23,6 @@
     flex-wrap: wrap;
     gap: $space-2 $space-3;
     justify-content: center;
-
-    @media (min-width: #{$bp-mobile + 1px}) {
-      justify-content: flex-start;
-    }
   }
 
   &__item {
@@ -44,7 +34,7 @@
     font-size: $font-size-sm;
     color: $color-text-on-dark;
     text-decoration: none;
-    letter-spacing: $letter-spacing-wider;
+    letter-spacing: normal;
     transition: color 0.2s ease;
 
     &:hover,
@@ -81,8 +71,7 @@
   width: 100%;
   text-align: center;
   font-size: $font-size-xs;
-  color: rgba($color-text-on-dark, 0.7);
-  padding-top: $space-3;
-  border-top: 1px solid rgba($color-white, 0.15);
-  margin-top: $space-2;
+  text-transform: uppercase;
+  color: $color-text-on-dark;
+  margin-bottom: $space-3;
 }

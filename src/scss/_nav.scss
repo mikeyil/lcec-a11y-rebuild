@@ -3,9 +3,10 @@
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
 .site-header {
-  background-color: $color-primary;
+  background-color: $color-white;
   position: relative;
   z-index: $nav-dropdown-z;
+  border-bottom: 1px solid $color-border;
 }
 
 .header-inner {
@@ -33,66 +34,54 @@
 .header-logo-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   padding-top: $space-3;
+  padding-bottom: $space-2;
 }
 
 .logo {
   display: inline-block;
   text-decoration: none;
-  color: $color-white;
+  color: $color-text;
 
   &:hover,
   &:focus {
-    color: $color-primary-light;
+    color: $color-primary;
   }
 }
 
 .logo__text {
-  font-family: $font-heading;
+  font-family: $font-body;
   font-weight: 700;
-  font-size: $font-size-3xl;
+  font-size: $font-size-2xl;
   line-height: $line-height-tight;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-bottom: 0;
   padding: $space-2 $space-3;
   width: fit-content;
-
-  @media (min-width: #{$bp-mobile + 1px}) {
-    font-size: $font-size-5xl;
-  }
-
-  @media (min-width: #{$bp-desktop + 1px}) {
-    font-size: $font-size-6xl;
-  }
-
-  @media (min-width: #{$bp-wide + 1px}) {
-    font-size: $font-size-7xl;
-  }
 }
 
 .header-phone {
   font-family: $font-body;
   font-size: $font-size-base;
-  text-align: center;
+  text-align: right;
   color: inherit;
-  padding-right: $space-3;
+  position: absolute;
+  right: $space-3;
 
   a {
-    color: $color-white;
+    color: $color-primary;
     font-size: $font-size-2xl;
+    font-weight: 400;
 
     @media (min-width: #{$bp-mobile + 1px}) {
-      font-size: $font-size-3xl;
-    }
-
-    @media (min-width: #{$bp-desktop + 1px}) {
       font-size: $font-size-2xl;
     }
 
     &:hover {
-      color: $color-primary-light;
+      color: $color-primary-dark;
     }
   }
 
@@ -137,23 +126,23 @@
 .nav__link {
   display: block;
   font-size: $nav-font-size;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
-  color: $color-white;
+  color: $color-text;
   text-decoration: none;
   padding: $space-2 $space-3;
   transition: $transition-base;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
 
   &:hover,
   &:focus {
-    color: $color-primary-light;
+    color: $color-primary;
     outline: none;
   }
 
   &.nav__link--active,
   &[aria-current="page"] {
-    border-bottom-color: $color-primary-light;
+    border-bottom-color: $color-primary;
   }
 }
 
@@ -164,22 +153,22 @@
   align-items: center;
   gap: $space-1;
   font-size: $nav-font-size;
-  font-weight: 700;
+  font-weight: 400;
   font-family: $font-heading;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-nav;
-  color: $color-white;
+  color: $color-text;
   text-decoration: none;
   padding: $space-2 $space-3;
   background: none;
   border: none;
   cursor: pointer;
   transition: $transition-base;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
 
   &:hover,
   &:focus {
-    color: $color-primary-light;
+    color: $color-primary;
     outline: none;
   }
 
@@ -197,16 +186,13 @@
   display: none;
   position: absolute;
   top: calc(100% + 4px);
-  left: 0;
-  min-width: 200px;
+  right: 0;
+  left: auto;
+  min-width: 220px;
   background-color: $color-white;
   box-shadow: $shadow-dropdown;
   z-index: $nav-dropdown-z;
   border-radius: 0;
-
-  @media (min-width: #{$bp-tablet + 1px}) {
-    min-width: 300px;
-  }
 
   &.is-open {
     display: block;
@@ -232,7 +218,7 @@
   font-size: $font-size-sm;
   font-family: $font-body;
   font-weight: 400;
-  letter-spacing: $letter-spacing-wider;
+  letter-spacing: normal;
   color: $color-text-light;
   text-decoration: none;
   transition: $transition-base;
@@ -257,7 +243,7 @@
   border: none;
   cursor: pointer;
   padding: $space-2;
-  color: $color-white;
+  color: $color-text;
 
   @media (max-width: $bp-tablet) {
     display: flex;

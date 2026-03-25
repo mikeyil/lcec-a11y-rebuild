@@ -205,8 +205,11 @@
   &__heading {
     font-family: $font-heading;
     font-size: $font-size-2xl;
-    font-weight: 700;
-    color: $color-white;
+    font-weight: 400;
+    color: $color-text;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    text-align: left;
     margin-bottom: $space-3;
   }
 }

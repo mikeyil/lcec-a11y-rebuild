@@ -7,6 +7,7 @@ $color-accent:         #4682b4;   // rgb(70,130,180) — steel blue (CTA alt)
 $color-bg-section-alt: #4a5e29;   // rgb(74,94,41) — slightly darker green section
 
 $color-white:          #ffffff;
+$color-gray:           #a9a9a9;   // rgb(169,169,169) — stat boxes & testimonial bg
 $color-text:           #151515;   // rgb(21,21,21)
 $color-text-medium:    #575757;   // rgb(87,87,87)
 $color-text-light:     #5e5e5e;   // rgb(94,94,94)
@@ -15,8 +16,8 @@ $color-border:         rgba(185, 185, 185, 0.5);
 
 // ─── Typography ───────────────────────────────────────────────────────────────
 $font-body:    'Lato', arial, sans-serif;
-$font-heading: 'Cabin', arial, sans-serif;
-$font-display: 'Bitter', georgia, serif;
+$font-heading: 'Lato', arial, sans-serif;
+$font-display: 'Lato', arial, sans-serif;
 
 $font-size-base:  16px;
 $font-size-sm:    14px;

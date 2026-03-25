@@ -4,7 +4,7 @@
 
 .page-wrap {
   min-height: 100vh;
-  background-color: $color-primary;
+  background-color: $color-white;
 }
 
 .container {
@@ -83,6 +83,25 @@
 .section--light {
   background-color: $color-primary-light;
   color: $color-text;
+}
+
+.section--blue {
+  background-color: $color-accent;
+  color: $color-white;
+  text-align: center;
+
+  p {
+    font-family: $font-body;
+    font-size: $font-size-2xl;
+    font-weight: 400;
+    color: $color-white;
+    line-height: $line-height-loose;
+  }
+}
+
+.section--gray {
+  background-color: $color-gray;
+  color: $color-white;
 }
 
 // ─── Flex / Grid Helpers ───────────────────────────────────────────────────────
