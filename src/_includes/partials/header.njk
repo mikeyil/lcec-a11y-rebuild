@@ -1,7 +1,7 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
     <div class="header-logo-row">
-      <a href="/" class="logo" title="LC Education Consulting">
+      <a href="{{ '/' | url }}" class="logo" title="LC Education Consulting">
         <h1 class="logo__text">LC Education Consulting</h1>
       </a>
       <div class="header-phone">
@@ -12,16 +12,16 @@
       <nav class="nav" aria-label="Primary navigation">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="/" class="nav__link" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+            <a href="{{ '/' | url }}" class="nav__link" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
           </li>
           <li class="nav__item">
-            <a href="/our-story/" class="nav__link" {% if page.url == "/our-story/" %}aria-current="page"{% endif %}>Our Story</a>
+            <a href="{{ '/our-story/' | url }}" class="nav__link" {% if page.url == "/our-story/" %}aria-current="page"{% endif %}>Our Story</a>
           </li>
           <li class="nav__item">
             <a href="http://www.lauracantagallosportfolio.com/" class="nav__link" target="_blank" rel="noopener">About</a>
           </li>
           <li class="nav__item">
-            <a href="/why-choose-us/" class="nav__link" {% if page.url == "/why-choose-us/" %}aria-current="page"{% endif %}>Why Choose Us</a>
+            <a href="{{ '/why-choose-us/' | url }}" class="nav__link" {% if page.url == "/why-choose-us/" %}aria-current="page"{% endif %}>Why Choose Us</a>
           </li>
           <li class="nav__item">
             <button class="nav__dropdown-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="nav-services-dropdown">
@@ -33,12 +33,12 @@
             <div id="nav-services-dropdown" class="nav__dropdown" role="region">
               <ul class="nav__dropdown-list">
                 <li class="nav__dropdown-item">
-                  <a href="/accessibility-services/" class="nav__dropdown-link" {% if page.url == "/accessibility-services/" %}aria-current="page"{% endif %}>
+                  <a href="{{ '/accessibility-services/' | url }}" class="nav__dropdown-link" {% if page.url == "/accessibility-services/" %}aria-current="page"{% endif %}>
                     <span>Accessibility Services</span>
                   </a>
                 </li>
                 <li class="nav__dropdown-item">
-                  <a href="/webinars-and-training/" class="nav__dropdown-link" {% if page.url == "/webinars-and-training/" %}aria-current="page"{% endif %}>
+                  <a href="{{ '/webinars-and-training/' | url }}" class="nav__dropdown-link" {% if page.url == "/webinars-and-training/" %}aria-current="page"{% endif %}>
                     <span>Webinars &amp; Training</span>
                   </a>
                 </li>
@@ -46,10 +46,10 @@
             </div>
           </li>
           <li class="nav__item">
-            <a href="/portfolio/" class="nav__link" {% if page.url == "/portfolio/" %}aria-current="page"{% endif %}>Portfolio</a>
+            <a href="{{ '/portfolio/' | url }}" class="nav__link" {% if page.url == "/portfolio/" %}aria-current="page"{% endif %}>Portfolio</a>
           </li>
           <li class="nav__item">
-            <a href="/contact/" class="nav__link" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a>
+            <a href="{{ '/contact/' | url }}" class="nav__link" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a>
           </li>
         </ul>
       </nav>
@@ -72,28 +72,28 @@
   </button>
   <ul class="mobile-nav__list">
     <li class="mobile-nav__item">
-      <a href="/" class="mobile-nav__link">Home</a>
+      <a href="{{ '/' | url }}" class="mobile-nav__link">Home</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/our-story/" class="mobile-nav__link">Our Story</a>
+      <a href="{{ '/our-story/' | url }}" class="mobile-nav__link">Our Story</a>
     </li>
     <li class="mobile-nav__item">
       <a href="http://www.lauracantagallosportfolio.com/" class="mobile-nav__link" target="_blank" rel="noopener">About</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/why-choose-us/" class="mobile-nav__link">Why Choose Us</a>
+      <a href="{{ '/why-choose-us/' | url }}" class="mobile-nav__link">Why Choose Us</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/accessibility-services/" class="mobile-nav__link">Accessibility Services</a>
+      <a href="{{ '/accessibility-services/' | url }}" class="mobile-nav__link">Accessibility Services</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/webinars-and-training/" class="mobile-nav__link">Webinars &amp; Training</a>
+      <a href="{{ '/webinars-and-training/' | url }}" class="mobile-nav__link">Webinars &amp; Training</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/portfolio/" class="mobile-nav__link">Portfolio</a>
+      <a href="{{ '/portfolio/' | url }}" class="mobile-nav__link">Portfolio</a>
     </li>
     <li class="mobile-nav__item">
-      <a href="/contact/" class="mobile-nav__link">Contact</a>
+      <a href="{{ '/contact/' | url }}" class="mobile-nav__link">Contact</a>
     </li>
   </ul>
 </nav>
