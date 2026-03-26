@@ -117,7 +117,7 @@
 
   p {
     font-family: $font-body;
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: $letter-spacing-wide;
@@ -125,12 +125,6 @@
     white-space: pre-line;
     text-wrap: pretty;
     color: $color-white;
-
-    @media (min-width: #{$bp-mobile + 1px}) {
-      font-size: $font-size-base;
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 }
 
@@ -155,7 +149,7 @@
 
   &__value {
     font-family: $font-body;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 700;
     color: $color-text;
     line-height: $line-height-tight;
@@ -180,7 +174,7 @@
 
   &__text {
     font-family: $font-body;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 700;
     line-height: $line-height-loose;
     letter-spacing: normal;

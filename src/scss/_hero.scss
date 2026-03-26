@@ -3,8 +3,8 @@
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
 .hero {
-  background-color: $color-primary;
-  color: $color-text-on-dark;
+  background-color: $color-white;
+  color: $color-text;
   padding: 0;
 
   &__inner {
@@ -56,7 +56,7 @@
     font-size: $font-size-2xl;
     font-weight: 400;
     text-transform: uppercase;
-    color: $color-text-on-dark;
+    color: $color-text;
     margin-bottom: $space-2;
   }
 
@@ -66,7 +66,7 @@
     font-weight: 700;
     text-transform: uppercase;
     line-height: $line-height-base;
-    color: $color-white;
+    color: $color-text;
     margin-bottom: $space-3;
     text-wrap: pretty;
   }
@@ -76,7 +76,7 @@
     font-size: $font-size-2xl;
     font-weight: 400;
     line-height: $line-height-loose;
-    color: $color-white;
+    color: $color-text;
     margin-bottom: $space-5;
     text-wrap: pretty;
   }

@@ -38,6 +38,11 @@
   position: relative;
   padding-top: $space-3;
   padding-bottom: $space-2;
+
+  @media (max-width: $bp-mobile) {
+    flex-direction: column-reverse;
+    gap: $space-1;
+  }
 }
 
 .logo {
@@ -48,6 +53,10 @@
   &:hover,
   &:focus {
     color: $color-primary;
+  }
+
+  @media (max-width: $bp-mobile) {
+    text-align: center;
   }
 }
 
@@ -86,7 +95,8 @@
   }
 
   @media (max-width: $bp-mobile) {
-    padding-right: 0;
+    position: static;
+    text-align: center;
   }
 }
 
