@@ -62,39 +62,6 @@
   }
 }
 
-// ─── ADA Deadline Section ─────────────────────────────────────────────────────
-
-.deadline-section {
-  background-color: $color-primary-dark;
-  color: $color-text-on-dark;
-  padding: $space-5 0;
-  text-align: center;
-
-  &__heading {
-    font-family: $font-heading;
-    font-size: $font-size-3xl;
-    font-weight: 700;
-    color: $color-white;
-    margin-bottom: $space-3;
-  }
-
-  &__dates {
-    font-family: $font-display;
-    font-size: $font-size-xl;
-    color: $color-primary-light;
-    margin-bottom: $space-2;
-  }
-
-  &__cta {
-    font-family: $font-heading;
-    font-size: $font-size-xl;
-    font-weight: 700;
-    color: $color-white;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-wide;
-  }
-}
-
 // ─── Philosophy Section ───────────────────────────────────────────────────────
 
 .philosophy-section {

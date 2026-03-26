@@ -2,28 +2,10 @@
 
 // ─── Utility Classes ──────────────────────────────────────────────────────────
 
-.d-none  { display: none !important; }
-.d-block { display: block !important; }
-.d-flex  { display: flex !important; }
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 .text-uppercase { text-transform: uppercase; }
 
-.mt-auto { margin-top: auto; }
-.mt-4    { margin-top: $space-4; }
-.mt-5    { margin-top: $space-5; }
-.mb-0    { margin-bottom: 0; }
+.mt-4 { margin-top: $space-4; }
+.mt-5 { margin-top: $space-5; }
 
 .text-xl { font-size: $font-size-xl; }
 

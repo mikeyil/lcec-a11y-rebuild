@@ -70,20 +70,12 @@ h6, .h6 {
   letter-spacing: $letter-spacing-wide;
 }
 
-// Body text
-.text-lg    { font-size: $font-size-lg; }
-.text-sm    { font-size: $font-size-sm; }
-.text-xs    { font-size: $font-size-xs; }
-
 // Alignment
 .text-center { text-align: center; }
-.text-left   { text-align: left; }
-.text-right  { text-align: right; }
 
 // Color shortcuts
 .text-white   { color: $color-white; }
 .text-primary { color: $color-primary; }
-.text-muted   { color: $color-text-medium; }
 .text-on-dark { color: $color-text-on-dark; }
 
 // Display / accent font
@@ -106,50 +98,3 @@ h6, .h6 {
   margin-bottom: $space-4;
 }
 
-// Eyebrow / label above heading
-.eyebrow {
-  font-family: $font-heading;
-  font-size: $font-size-sm;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-  margin-bottom: $space-2;
-}
-
-// Announcement / callout text
-.announcement-text {
-  font-family: $font-heading;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-  text-align: center;
-  font-size: $font-size-sm;
-
-  @media (min-width: #{$bp-mobile + 1px}) {
-    font-size: $font-size-base;
-  }
-}
-
-// Rich text content (CMS-authored content)
-.rich-text {
-  line-height: $line-height-loose;
-
-  p + p {
-    margin-top: $space-3;
-  }
-
-  ul, ol {
-    list-style: revert;
-    padding-left: 1.3em;
-    margin: $space-3 $space-3;
-    text-align: left;
-    text-wrap: pretty;
-  }
-
-  li + li {
-    margin-top: $space-1;
-  }
-
-  strong { font-weight: 700; }
-  em     { font-style: italic; }
-}

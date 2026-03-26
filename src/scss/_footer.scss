@@ -44,28 +44,6 @@
   }
 }
 
-.footer-social {
-  display: flex;
-  gap: $space-3;
-  align-items: center;
-  justify-content: center;
-
-  a {
-    color: $color-text-on-dark;
-    transition: color 0.2s ease;
-
-    &:hover,
-    &:focus {
-      color: $color-primary-light;
-    }
-
-    svg {
-      display: block;
-      width: 28px;
-      height: 28px;
-    }
-  }
-}
 
 .footer-copy {
   width: 100%;
