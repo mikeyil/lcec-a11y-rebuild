@@ -8,7 +8,7 @@
   color: $color-text;
   padding: $space-5 $space-3;
 
-  @media (min-width: #{$bp-mobile + 1px}) {
+  @media (min-width: #{$bp-tablet + 1px}) {
     padding: $space-6 $space-4;
   }
 }
@@ -52,12 +52,12 @@
   font-size: $font-size-base;
   line-height: normal;
   padding: 0.5em;
-  transition: border-color 0.2s ease;
+  transition: border-color $transition-quick;
   width: 100%;
 
   &:focus {
     border-color: $color-primary;
-    outline: 2px solid $color-primary;
+    outline: $focus-outline-stroke $color-primary;
     outline-offset: 1px;
   }
 
@@ -76,12 +76,12 @@
   line-height: 1.75;
   padding: 0.5em;
   resize: vertical;
-  transition: border-color 0.2s ease;
+  transition: border-color $transition-quick;
   width: 100%;
 
   &:focus {
     border-color: $color-primary;
-    outline: 2px solid $color-primary;
+    outline: $focus-outline-stroke $color-primary;
     outline-offset: 1px;
   }
 
@@ -100,7 +100,7 @@
 
 .form-privacy {
   color: $color-text-medium;
-  font-size: $font-size-xs;
+  font-size: $font-size-sm;
   margin-top: $space-3;
   text-align: center;
 
@@ -114,8 +114,8 @@
 
     &:focus {
       color: $color-primary-dark;
-      outline: 2px solid $color-primary;
-      outline-offset: 2px;
+      outline: $focus-outline-stroke $color-primary;
+      outline-offset: $focus-outline-offset;
     }
   }
 }

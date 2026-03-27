@@ -1,5 +1,11 @@
 @use 'variables' as *;
 @use 'components' as *;
+// ─── Text Transform Utilities ──────────────────────────────────────────────
+// Use .text-titlecase to apply title casing to headings or text where needed.
+.text-titlecase {
+  text-transform: none;
+  /* Title case is not automatic in CSS, so use this class for headings written in title case in markup. */
+}
 
 // ─── Typography ───────────────────────────────────────────────────────────────
 
@@ -10,30 +16,18 @@ h1 {
   font-weight: 700;
   line-height: $line-height-tight;
 
-  @media (min-width: #{$bp-mobile + 1px}) {
-    font-size: $font-size-5xl;
-  }
-
   @media (min-width: #{$bp-desktop + 1px}) {
-    font-size: $font-size-6xl;
-  }
-
-  @media (min-width: #{$bp-wide + 1px}) {
-    font-size: $font-size-7xl;
+    font-size: $font-size-display;
   }
 }
 
 h2 {
   font-family: $font;
-  font-size: $font-size-2xl;
+  font-size: $font-size-xl;
   font-weight: 700;
 
-  @media (min-width: #{$bp-mobile + 1px}) {
-    font-size: $font-size-5xl;
-  }
-
   @media (min-width: #{$bp-desktop + 1px}) {
-    font-size: $font-size-6xl;
+    font-size: $font-size-display;
   }
 }
 
@@ -42,7 +36,7 @@ h3 {
   font-size: $font-size-xl;
   font-weight: 700;
 
-  @media (min-width: #{$bp-mobile + 1px}) {
+  @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-3xl;
   }
 }
@@ -52,7 +46,7 @@ h4 {
   font-size: $font-size-lg;
   font-weight: 700;
 
-  @media (min-width: #{$bp-mobile + 1px}) {
+  @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-xl;
   }
 }

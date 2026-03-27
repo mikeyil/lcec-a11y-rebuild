@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'components' as *;
 
 // ─── Utility Classes ──────────────────────────────────────────────────────────
 
@@ -9,17 +10,17 @@
 
 // Skip link for accessibility
 .skip-link {
-  background: $color-primary-dark;
-  color: $color-white;
-  font-family: $font;
-  font-weight: 700;
+  @extend .btn;
+  @extend .btn--primary;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  letter-spacing: $letter-spacing-wide;
+  min-height: $nav-height;
+  text-transform: uppercase;
   left: 0;
-  padding: $space-2 $space-3;
   position: absolute;
-  text-decoration: none;
   top: -100%;
   z-index: 5;
-
   &:focus {
     top: 0;
   }

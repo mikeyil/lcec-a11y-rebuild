@@ -36,6 +36,30 @@ function initNavigation() {
       setAria(toggle, 'aria-expanded', 'true');
       setAria(toggle, 'aria-label', 'Close navigation menu');
       closeBtn && closeBtn.focus();
+
+      // Focus trap: keep focus inside mobile nav
+      function trapFocus(e) {
+        if (!nav.classList.contains('is-open')) return;
+        const focusable = nav.querySelectorAll('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            }
+          } else {
+            if (document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+      }
+      nav.addEventListener('keydown', trapFocus);
+      nav._trapFocusHandler = trapFocus;
     }
     function closeNav() {
       toggleClass(nav, 'is-open', false);
@@ -45,6 +69,12 @@ function initNavigation() {
       setAria(toggle, 'aria-expanded', 'false');
       setAria(toggle, 'aria-label', 'Open navigation menu');
       toggle.focus();
+
+      // Remove focus trap event
+      if (nav._trapFocusHandler) {
+        nav.removeEventListener('keydown', nav._trapFocusHandler);
+        delete nav._trapFocusHandler;
+      }
     }
     toggle.addEventListener('click', () => {
       nav.classList.contains('is-open') ? closeNav() : openNav();

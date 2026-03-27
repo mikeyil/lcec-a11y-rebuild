@@ -17,7 +17,7 @@
 @use 'sections';
 
 // Components
-@use 'components';
+@use 'components' as *;
 @use 'forms';
 
 // Chrome
