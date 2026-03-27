@@ -43,11 +43,12 @@ description: "Connect with LC Education Consulting. Fill out the contact form or
 <section class="contact-form-section">
   <div class="container">
     <div role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
-    <form class="contact-form" action="#" method="post">
+    <form class="contact-form" name="contact" action="/contact-success/" method="post" netlify data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
       <h2 class="contact-form__heading">Let&rsquo;s Talk About Your Needs</h2>
 
-      {# Honeypot — hidden from real users #}
-      <input type="text" name="_app_id" autocomplete="off" tabindex="-1" value="" />
+      {# Honeypot — hidden from real users, used by Netlify spam filtering #}
+      <input type="text" name="bot-field" autocomplete="off" tabindex="-1" value="" />
 
       <div class="form-field">
         <label class="form-label" for="org-name">Organization Name <span aria-hidden="true">*</span></label>
@@ -102,11 +103,7 @@ description: "Connect with LC Education Consulting. Fill out the contact form or
       <button type="submit" class="form-submit">Send</button>
 
       <p class="form-privacy">
-        This site is protected by reCAPTCHA and the Google
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
-        and
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a>
-        apply.
+        Your information will only be used to respond to your inquiry and will never be shared or sold.
       </p>
     </form>
   </div>
