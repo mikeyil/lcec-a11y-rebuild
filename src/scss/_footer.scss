@@ -49,10 +49,39 @@
   }
 }
 
+.footer-brand {
+  color: $color-text-on-dark;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer-phone {
+  text-align: center;
+
+  a {
+    color: $color-text-on-dark;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary-light;
+    }
+
+    &:focus {
+      color: $color-white;
+      outline: 2px solid $color-white;
+      outline-offset: 2px;
+    }
+  }
+}
+
 .footer-copy {
   color: $color-text-on-dark;
   font-size: $font-size-xs;
-  margin-bottom: $space-3;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
