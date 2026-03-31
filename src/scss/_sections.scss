@@ -164,7 +164,7 @@
     flex-shrink: 0;
     height: auto;
     object-fit: cover;
-    width: 220px;
+    width: 80vw;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       width: 280px;
@@ -175,21 +175,35 @@
     flex: 1;
   }
 
-  &__subheading {
-    color: $color-text-on-dark;
+  &__heading {
+    color: $color-text;
     font-family: $font;
-    font-size: $font-size-xl;
-    font-weight: 700;
+    font-size: $font-size-page-title;
+    font-weight: 400;
+    letter-spacing: $letter-spacing-wide;
+    line-height: $line-height-snug;
+    margin-bottom: $space-5;
+    text-transform: uppercase;
+  }
+
+  &__subheading {
+    color: $color-text;
+    font-family: $font;
+    font-size: $font-size-page-title;
+    font-weight: 400;
+    letter-spacing: $letter-spacing-wide;
     line-height: $line-height-snug;
     margin-bottom: $space-3;
-
   }
 
   &__body {
-    color: $color-text-on-dark;
+    color: $color-text-medium;
     font-size: $font-size-base;
     line-height: $line-height-loose;
 
+    & + & {
+      margin-top: $space-3;
+    }
   }
 }
 

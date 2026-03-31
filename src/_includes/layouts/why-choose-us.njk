@@ -1,30 +1,26 @@
 ---
 layout: base.njk
 ---
-<section class="page-title">
+<section class="section section--white">
   <div class="container">
-    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
-    <p class="page-title__subheading">{{ page_title.subheading }}</p>
-  </div>
-</section>
-
-<section class="section section--green">
-  <div class="container">
+    <h1 class="why-content__heading">{{ page_title.heading }}</h1>
     <div class="why-content">
       <img src="{{ '/img/laura-cantagallo.webp' | url }}" alt="Laura Cantagallo, founder of LC Education Consulting" class="why-content__photo" width="400" height="400" />
       <div class="why-content__text">
         <p class="why-content__subheading">{{ page_title.subheading }}</p>
-        <p class="why-content__body">{{ body }}</p>
+        {% for paragraph in body %}
+        <p class="why-content__body">{{ paragraph }}</p>
+        {% endfor %}
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--dark">
+<section class="section section--white">
   <div class="container">
     <div class="credentials-layout">
       <div class="credentials-layout__text">
-        <h2 class="section-heading text-white">{{ credentials_heading }}</h2>
+        <h2 class="section-heading">{{ credentials_heading }}</h2>
         <ul class="credentials-list">
           {% for item in credentials %}
           <li>{{ item }}</li>
