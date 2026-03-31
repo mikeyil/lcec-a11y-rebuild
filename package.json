@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "npm run dev",
     "dev": "concurrently \"npm run dev:11ty\" \"npm run dev:sass\" \"npm run dev:js\"",
     "dev:11ty": "eleventy --serve --incremental --port 8080",
     "dev:sass": "sass src/scss/main.scss dist/css/main.css --watch --style=expanded --source-map",
