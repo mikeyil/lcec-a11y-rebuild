@@ -65,6 +65,25 @@ h6 {
   text-transform: uppercase;
 }
 
+// Body link styling — applies to links within prose/body text contexts
+p a,
+dd a,
+li a,
+address a {
+  color: $color-primary;
+  text-decoration: underline;
+  transition: color $transition-quick;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+  &:focus {
+    outline: $focus-outline-stroke $color-primary;
+    outline-offset: $focus-outline-offset;
+  }
+}
+
 // Alignment
 .text-center { text-align: center; }
 

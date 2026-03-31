@@ -4,7 +4,14 @@
 // ─── Utility Classes ──────────────────────────────────────────────────────────
 
 .section--flush-bottom { padding-bottom: 0; }
-.section--flush-top { padding-top: 0; }
+.section--flush-top    { padding-top: 0; }
+.section--compact-top  {
+  padding-top: $space-4;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    padding-top: $space-5;
+  }
+}
 
 .divider {
   border: none;
@@ -20,7 +27,12 @@
   margin-left: 0.3em;
 }
 
+.btn--ghost .external-link-icon {
+  color: inherit;
+}
+
 .external-link-icon {
+  color: $color-text-medium;
   display: inline-block;
   width: 0.85em;
   height: 0.85em;
@@ -28,7 +40,6 @@
   vertical-align: middle;
   position: relative;
   top: -0.4em;
-  opacity: 0.65;
   flex-shrink: 0;
 }
 
