@@ -1,4 +1,18 @@
+import { minify } from "html-minifier-terser";
+
 export default function (eleventyConfig) {
+  eleventyConfig.addTransform("htmlmin", async function (content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      return await minify(content, {
+        removeComments: true,
+        collapseWhitespace: true,
+        useShortDoctype: true,
+        collapseBooleanAttributes: true,
+      });
+    }
+    return content;
+  });
+
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   eleventyConfig.addPassthroughCopy({ "manifest.webmanifest": "manifest.webmanifest" });

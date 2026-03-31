@@ -9,7 +9,7 @@ const ctx = await esbuild.context({
   outfile: "dist/js/main.js",
   minify: !watch,
   sourcemap: watch,
-  target: ["es2017"],
+  target: ["es2020"],
   format: "iife",
   logLevel: "info",
 });

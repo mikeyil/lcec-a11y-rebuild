@@ -18,7 +18,7 @@ layout: base.njk
       {% for block in philosophy.blocks %}
       <article class="philosophy-section__block">
         <h3 class="philosophy-section__block-heading">{{ block.heading }}</h3>
-        <img src="{{ block.image | url }}" alt="" class="philosophy-section__image" width="16" height="9" aria-hidden="true">
+        <img src="{{ block.image | url }}" alt="" class="philosophy-section__image" width="16" height="9" aria-hidden="true" loading="lazy">
         <p>{{ block.body }}</p>
       </article>
       {% endfor %}

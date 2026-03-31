@@ -14,10 +14,15 @@
     "build:sass": "sass src/scss/main.scss dist/css/main.css --style=compressed --no-source-map",
     "build:js": "node build/js.js"
   },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "concurrently": "^9.0.0",
     "esbuild": "^0.25.0",
+    "html-minifier-terser": "^7.2.0",
     "sass": "^1.80.0"
   }
 }
