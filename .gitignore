@@ -36,3 +36,6 @@ dist/
 # OS temp files
 .temporary/
 .cache/
+
+# Claude Code local overrides
+.claude/settings.local.json
