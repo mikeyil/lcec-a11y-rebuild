@@ -1,11 +1,5 @@
 @use 'variables' as *;
 @use 'components' as *;
-// ─── Text Transform Utilities ──────────────────────────────────────────────
-// Use .text-titlecase to apply title casing to headings or text where needed.
-.text-titlecase {
-  text-transform: none;
-  /* Title case is not automatic in CSS, so use this class for headings written in title case in markup. */
-}
 
 // ─── Typography ───────────────────────────────────────────────────────────────
 
@@ -84,6 +78,7 @@ address a {
   }
 }
 
+
 // Alignment
 .text-center { text-align: center; }
 
@@ -92,10 +87,28 @@ address a {
 .text-primary { color: $color-primary; }
 .text-on-dark { color: $color-text-on-dark; }
 
+// Text transform utilities
+// Use .text-titlecase to apply title casing to headings or text where needed.
+.text-titlecase {
+  text-transform: none;
+  /* Title case is not automatic in CSS, so use this class for headings written in title case in markup. */
+}
+
 
 // Section headings
 .section-heading {
-  @extend .heading--section;
+  color: $color-primary;
+  // Contextual override for blue sections
+  .section--blue & {
+    color: $color-white;
+  }
+  font-family: $font;
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  margin-bottom: $space-5;
+  text-align: center;
+  line-height: $line-height-snug;
+  /* No uppercase, no letter-spacing */
 }
 
 .section-subheading {

@@ -15,7 +15,8 @@
 
 .contact-form {
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 400px;
+  width: 100%;
 
   &__heading {
     color: $color-primary;
@@ -30,6 +31,9 @@
 .form-field {
   margin-bottom: $space-4;
   width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-label {
@@ -54,6 +58,9 @@
   padding: 0.5em;
   transition: border-color $transition-quick;
   width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 
   &:focus {
     border-color: $color-primary;
@@ -78,6 +85,9 @@
   resize: vertical;
   transition: border-color $transition-quick;
   width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 
   &:focus {
     border-color: $color-primary;
@@ -95,6 +105,9 @@
 .contact-form .btn[type="submit"] {
   border-color: $color-overlay;
   width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-error {
