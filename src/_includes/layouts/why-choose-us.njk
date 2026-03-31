@@ -11,19 +11,28 @@ layout: base.njk
 <section class="section section--green">
   <div class="container">
     <div class="why-content">
-      <p class="why-content__body">{{ body }}</p>
+      <img src="{{ '/img/laura-cantagallo.webp' | url }}" alt="Laura Cantagallo, founder of LC Education Consulting" class="why-content__photo" width="400" height="400" />
+      <div class="why-content__text">
+        <p class="why-content__subheading">{{ page_title.subheading }}</p>
+        <p class="why-content__body">{{ body }}</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section section--dark">
   <div class="container">
-    <h2 class="section-heading text-white">{{ credentials_heading }}</h2>
-    <ul class="credentials-list">
-      {% for item in credentials %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+    <div class="credentials-layout">
+      <div class="credentials-layout__text">
+        <h2 class="section-heading text-white">{{ credentials_heading }}</h2>
+        <ul class="credentials-list">
+          {% for item in credentials %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <img src="{{ '/img/why-choose-us_career.webp' | url }}" alt="" class="credentials-layout__photo" aria-hidden="true" loading="lazy" />
+    </div>
   </div>
 </section>
 

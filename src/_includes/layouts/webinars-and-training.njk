@@ -9,9 +9,12 @@ layout: base.njk
 
 <section class="section section--green">
   <div class="container">
-    <div class="intro-section">
-      <h2 class="intro-section__heading">{{ intro.heading }}</h2>
-      <p class="intro-section__subheading">{{ intro.subheading }}</p>
+    <div class="webinars-intro">
+      <img src="{{ '/img/webinars-and-training.jpg' | url }}" alt="" class="webinars-intro__photo" aria-hidden="true" loading="lazy" />
+      <div class="intro-section">
+        <h2 class="intro-section__heading">{{ intro.heading }}</h2>
+        <p class="intro-section__subheading">{{ intro.subheading }}</p>
+      </div>
     </div>
   </div>
 </section>

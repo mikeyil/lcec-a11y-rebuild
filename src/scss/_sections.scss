@@ -147,14 +147,152 @@
 // ─── Why Choose Us content ────────────────────────────────────────────────────
 
 .why-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
   padding: $space-5 0;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    display: block;
+    flex-shrink: 0;
+    height: auto;
+    object-fit: cover;
+    width: 220px;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      width: 280px;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__subheading {
+    color: $color-text-on-dark;
+    font-family: $font;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    line-height: $line-height-snug;
+    margin-bottom: $space-3;
+    text-wrap: pretty;
+  }
 
   &__body {
     color: $color-text-on-dark;
     font-size: $font-size-base;
     line-height: $line-height-loose;
-    max-width: 800px;
     text-wrap: pretty;
+  }
+}
+
+// ─── Webinars intro layout ────────────────────────────────────────────────────
+
+.webinars-intro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__photo {
+    border-radius: 8px;
+    display: block;
+    flex-shrink: 0;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      width: 340px;
+    }
+  }
+
+  .intro-section {
+    background-color: transparent;
+    padding: 0;
+    text-align: left;
+    flex: 1;
+  }
+}
+
+// ─── Credentials layout (Why Choose Us) ──────────────────────────────────────
+
+.credentials-layout {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__photo {
+    border-radius: 8px;
+    display: block;
+    flex-shrink: 0;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      width: 320px;
+    }
+  }
+}
+
+// ─── Portfolio project cards ──────────────────────────────────────────────────
+
+.portfolio-list {
+  display: grid;
+  gap: $space-5;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.portfolio-card {
+  background-color: $color-bg-testimonial;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__title {
+    color: $color-text-on-dark;
+    font-family: $font;
+    font-size: $font-size-base;
+    font-weight: 700;
+    line-height: $line-height-base;
+    padding: $space-4;
   }
 }
 

@@ -21,7 +21,12 @@ layout: base.njk
     <h2 class="section-heading text-white">{{ projects_heading }}</h2>
     <ul class="portfolio-list">
       {% for project in projects %}
-      <li>{{ project }}</li>
+      <li class="portfolio-card">
+        {% if project.image %}
+        <img src="{{ project.image | url }}" alt="" class="portfolio-card__image" aria-hidden="true" loading="lazy" />
+        {% endif %}
+        <p class="portfolio-card__title">{{ project.title }}</p>
+      </li>
       {% endfor %}
     </ul>
   </div>
