@@ -344,7 +344,7 @@
   height: 100%;
   left: 0;
   max-width: 75%;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding-top: $nav-height;
@@ -389,6 +389,7 @@
   flex: 1;
   overflow-y: auto;
   padding-bottom: $space-4;
+  padding-top: $focus-outline-offset;
 }
 
 .mobile-nav__link {
