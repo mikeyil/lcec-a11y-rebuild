@@ -82,7 +82,7 @@
     color: $color-text;
     @extend .heading--section;
     font-size: $font-size-page-title;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: $letter-spacing-wide;
     margin-bottom: $space-5;
   }
@@ -358,7 +358,6 @@
     color: $color-white;
     font-family: $font;
     font-size: $font-size-page-title;
-    font-weight: 400;
     letter-spacing: $letter-spacing-wide;
     line-height: $line-height-snug;
     margin-bottom: $space-3;
