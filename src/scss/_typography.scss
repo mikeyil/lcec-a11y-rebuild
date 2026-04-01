@@ -92,7 +92,7 @@ address a {
   font-size: $font-size-base;
   font-weight: 700;
   line-height: $line-height-snug;
-  margin-bottom: $space-32px;
+  margin: $space-16px 0;
   text-align: center;
   /* No uppercase, no letter-spacing */
 
@@ -103,6 +103,7 @@ address a {
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-3xl;
+    margin: $space-32px 0;
   }
 }
 
@@ -124,14 +125,17 @@ address a {
   font-weight: 700;
   letter-spacing: $letter-spacing-body;
   line-height: $line-height-snug;
-  margin-bottom: $space-16px;
+  margin: $space-16px 0;
   text-align: center;
   text-transform: uppercase;
-
+  &:first-child {
+    margin-top: 0;
+  }
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-page-title;
     font-weight: 400;
     text-align: left;
+    margin: $space-32px 0;
   }
 }
 
@@ -143,7 +147,7 @@ address a {
   font-weight: 700;
   letter-spacing: $letter-spacing-body;
   line-height: $line-height-snug;
-  margin-bottom: $space-16px;
+  margin: $space-16px 0;
   text-align: center;
   text-transform: uppercase;
 
@@ -151,6 +155,7 @@ address a {
     font-size: $font-size-page-title;
     font-weight: 400;
     text-align: left;
+    margin: $space-32px 0;
   }
 }
 

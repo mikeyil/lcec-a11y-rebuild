@@ -87,13 +87,14 @@
     font-weight: 400;
     letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
-    margin-bottom: $space-32px;
+    margin: $space-16px 0;
     text-align: center;
     text-transform: uppercase;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-page-title;
       text-align: left;
+      margin: $space-32px 0;
     }
   }
 

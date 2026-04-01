@@ -1,12 +1,12 @@
 @use 'variables' as *;
+@use 'utilities' as *;
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
 .site-header {
   z-index: $nav-dropdown-z;
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding-bottom: $space-16px;
-    padding-top: $space-24px;
+    padding: $space-32px 0;
     &.container {
       border: none;
       margin-bottom: 0;

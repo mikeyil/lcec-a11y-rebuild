@@ -11,10 +11,10 @@ philosophy:
   heading: "Our Philosophy"
   blocks:
     - heading: "Our Mission"
-      image: "/img/our-story_our-mission.jpg"
+      image: "/img/about-mission.jpg"
       body: "LC Education Consulting helps schools, organizations, and businesses remove barriers to access through digital accessibility, assistive technology, and inclusive training that supports all users."
     - heading: "Our Vision"
-      image: "/img/our-story_our-vision.jpg"
+      image: "/img/about-vision.jpg"
       body: "Our vision is a world where digital content, learning environments, and technology are designed with accessibility in mind from the start, so every person can participate fully and independently."
 ---
 

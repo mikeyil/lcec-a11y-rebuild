@@ -1,3 +1,7 @@
+
+@use 'variables' as *;
+@use 'components' as *;
+
 @mixin calc-add($property, $base, $add) {
   #{$property}: calc(#{$base} + #{$add});
 }
@@ -25,10 +29,6 @@
   height: $space-24px;
   width: $space-24px;
 }
-@use 'variables' as *;
-@use 'components' as *;
-
-// ─── Utility Classes ──────────────────────────────────────────────────────────
 
 .section--flush-bottom {
   padding-bottom: 0;

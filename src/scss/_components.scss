@@ -25,6 +25,8 @@
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
+    font-size: $font-size-base;
+    padding: $space-8px $space-24px;
     width: auto;
   }
 }
@@ -83,7 +85,7 @@
 // ─── List Utility ────────────────────────────────────────────────────────────
 .list--disc {
   list-style: disc;
-  padding-left: $letter-spacing-wider;
+  padding-left: $paragraph-spacing;
   li {
     font-size: $font-size-sm;
     line-height: $line-height-loose;
@@ -210,7 +212,7 @@
   .testimonial__text {
     font-size: $font-size-xl;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: $letter-spacing-body;
     line-height: $line-height-loose;
     margin-bottom: $space-16px;
     text-transform: uppercase;
@@ -287,7 +289,7 @@
 
   &__heading {
     color: $color-text-on-dark;
-    font-size: $font-size-xl;
+    font-size: $font-size-base;
     font-weight: 700;
     margin-bottom: $space-8px;
 

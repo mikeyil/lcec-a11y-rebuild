@@ -8,9 +8,9 @@ intro_body: "Welcome to the LC Education Consulting portfolio, where selected pr
 projects_heading: "Featured Projects"
 projects:
   - title: "American College of Physicians (ACP) Medical Knowledge Self-Assessment Program (MKSAP) Web Accessibility Evaluation & VPAT"
-    image: "/img/portfolio-projects-1.jpg"
+    image: "/img/portfolio-1.jpg"
   - title: "Web Accessibility Evaluation Using VoiceOver — Articulate 360 Online Courses"
-    image: "/img/portfolio-projects-2.jpg"
+    image: "/img/portfolio-2.jpg"
 cta:
   heading: "Contact Us"
   subheading: "Ready to get started? Book a Free 30-Minute Discovery Call."

@@ -4,7 +4,7 @@ layout: base.njk
 <section class="hero">
   <div class="container hero__inner">
     <figure class="hero__logo">
-      <img src="{{ '/img/lc-education-consulting_logo.jpg' | url }}" alt="LC Education Consulting Logo" width="548" height="548" />
+      <img src="{{ '/img/logo-lcec.jpg' | url }}" alt="LC Education Consulting Logo" width="548" height="548" />
     </figure>
     <div class="hero__content">
       <p class="hero__eyebrow">{{ hero.eyebrow }}</p>
@@ -20,10 +20,11 @@ layout: base.njk
 
 <section class="section section--blue">
   <div class="container">
-    <h2 class="section-heading text-titlecase">{{ announcement.heading }}</h2>
-    <p class="section-subheading">{{ announcement.subheading | safe }}</p>
-    <p>{{ announcement.body }}</p>
-    <a href="{{ announcement.link_url }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ announcement.link_text }}</a>
+    <div class="page-intro">
+      <h2 class="section-heading text-titlecase">{{ announcement.heading }}</h2>
+      <p class="section-subheading">{{ announcement.subheading | safe }}</p>
+      <p>{{ announcement.body }}</p>
+      <a href="{{ announcement.link_url }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ announcement.link_text }}</a>
   </div>
 </section>
 

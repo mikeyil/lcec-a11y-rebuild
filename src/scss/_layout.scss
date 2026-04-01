@@ -25,12 +25,11 @@
 // ─── Sections ─────────────────────────────────────────────────────────────────
 
 .section {
-  padding-bottom: $space-24px;
-  padding-top: $space-24px;
+
+  padding: $space-16px 0;
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding-bottom: $space-32px;
-    padding-top: $space-32px;
+    padding: $space-32px 0;
   }
 }
 
@@ -52,12 +51,11 @@
 .section--blue {
   background-color: $color-accent;
   color: $color-white;
-  padding-bottom: $space-24px;
-  padding-top: $space-24px;
+  padding: $space-16px 0;
   text-align: center;
 
   p {
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-xl;
@@ -65,8 +63,7 @@
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding-bottom: $space-32px;
-    padding-top: $space-32px;
+    padding: $space-32px 0;
   }
 }
 
