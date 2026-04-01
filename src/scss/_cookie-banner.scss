@@ -5,17 +5,17 @@
 
 .cookie-banner {
   background-color: $color-primary;
-  bottom: $space-24px;
-  box-shadow: $shadow-card;
+  bottom: 0;
+  box-shadow: $shadow-sheet;
   color: $color-white;
   display: none;
   flex-direction: column;
   gap: $space-16px;
   padding: $space-24px;
   position: fixed;
-  right: $space-24px;
-  width: 320px;
+  width: 100%;
   z-index: 4;
+
 
   &.is-visible {
     display: flex;
@@ -44,6 +44,10 @@
     padding: $space-8px $space-24px;
     text-transform: uppercase;
     transition: $transition-base;
+    width: 100%;
+    @media (min-width: #{$bp-tablet + 1px}) {
+      width: auto;
+    }
 
     &:hover {
       background-color: $color-primary-light;
@@ -53,5 +57,11 @@
       outline: $focus-outline-stroke $color-white;
       outline-offset: $focus-outline-offset;
     }
+  }
+  @media (min-width: #{$bp-tablet + 1px}) {
+    bottom: $space-24px;
+    box-shadow: $shadow-card;
+    right: $space-24px;
+    width: 320px;
   }
 }
