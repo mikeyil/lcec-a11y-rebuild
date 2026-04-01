@@ -1,20 +1,3 @@
-// ─── Utility Mixins ─────────────────────────────────────────────────────────
-
-@mixin flexbox($direction: row, $align: stretch, $justify: flex-start, $wrap: nowrap) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
-  flex-wrap: $wrap;
-}
-
-@mixin text-transform($transform: uppercase) {
-  text-transform: $transform;
-}
-
-@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
-  transition: #{$property} #{$duration} #{$timing};
-}
 // ─── Colors ───────────────────────────────────────────────────────────────────
 $color-primary:        #556b2f;   // rgb(85,107,47) — olive green
 $color-primary-dark:   #364519;   // rgb(54,69,28)
@@ -65,17 +48,9 @@ $space-40px:   40px;
 $space-48px:   48px;
 $space-56px:   56px;
 
-// ─── Sizes ───────────────────────────────────────────────────────────────────
-
-@mixin size-24x24 {
-  height: $space-24px;
-  width: $space-24px;
-}
 
 
-@mixin calc-add($property, $base, $add) {
-  #{$property}: calc(#{$base} + #{$add});
-}
+
 
 
 

@@ -1,23 +1,7 @@
 
-// ─── Utility Functions ───────────────────────────────────────────────────────
-function toggleClass(el, className, force) {
-  if (!el) return;
-  if (typeof force === 'boolean') {
-    el.classList.toggle(className, force);
-  } else {
-    el.classList.toggle(className);
-  }
-}
-
-function setAria(el, attr, value) {
-  if (el) el.setAttribute(attr, value);
-}
-
-function onEscape(callback) {
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') callback(e);
-  });
-}
+// ─── Utility Functions (imported) ─────────────────────────────────────────--
+import { toggleClass, setAria, onEscape } from './utils/dom.js';
+import { formatPhoneNumber } from './utils/form.js';
 
 // ─── Navigation (Mobile & Dropdown) ─────────────────────────────────────────-
 function initNavigation() {
@@ -232,16 +216,7 @@ function initContactForm() {
   const phoneField = form.querySelector('#phone');
   if (phoneField) {
     phoneField.addEventListener('input', () => {
-      const digits = phoneField.value.replace(/\D/g, '').slice(0, 10);
-      let formatted = digits;
-      if (digits.length > 6) {
-        formatted = '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
-      } else if (digits.length > 3) {
-        formatted = '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
-      } else if (digits.length > 0) {
-        formatted = '(' + digits;
-      }
-      phoneField.value = formatted;
+      phoneField.value = formatPhoneNumber(phoneField.value);
     });
   }
 
