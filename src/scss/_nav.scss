@@ -357,7 +357,7 @@
 .mobile-nav__close {
   background: none;
   border: none;
-  color: $color-primary-light;
+  color: $color-primary-dark;
   cursor: pointer;
   line-height: 0;
   padding: 0;
@@ -370,8 +370,9 @@
   }
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary;
+    outline: $focus-outline-stroke $color-primary-dark;
     outline-offset: $focus-outline-offset;
+    border-radius: $focus-outline-radius;
   }
 }
 
