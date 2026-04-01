@@ -1,33 +1,17 @@
 ---
-layout: base.njk
+layout: page-with-intro.njk
 ---
-<section class="page-title">
-  <div class="container">
-    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
-  </div>
-</section>
-
-<section class="section section--green">
-  <div class="container">
-    <div class="webinars-intro">
-      <img src="{{ '/img/webinars-and-training.jpg' | url }}" alt="" class="webinars-intro__photo" aria-hidden="true" loading="lazy" />
-      <div class="intro-section">
-        <h2 class="intro-section__heading">{{ intro.heading }}</h2>
-        <p class="intro-section__subheading">{{ intro.subheading }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section--white">
   <div class="container">
-    <div class="services-grid">
-      {% for training in trainings %}
-      <article class="training-card">
-        <h3 class="training-card__heading">{{ training.heading }}</h3>
+    <h2 class="detail-heading">Webinars and Training</h2>
+    <div class="credentials-layout">
+      <div class="credentials-layout__text">
+        {% for training in trainings %}
+        <h3 class="detail-subheading">{{ training.heading }}</h3>
         <p class="training-card__description">{{ training.description }}</p>
-      </article>
-      {% endfor %}
+        {% endfor %}
+      </div>
+      <img src="{{ '/img/webinars-and-training.jpg' | url }}" alt="" class="credentials-layout__photo" aria-hidden="true" loading="lazy" />
     </div>
   </div>
 </section>

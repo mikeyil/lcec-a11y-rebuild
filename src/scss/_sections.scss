@@ -42,7 +42,7 @@
   &__heading {
     font-size: $font-size-3xl;
     font-weight: 400;
-    letter-spacing: $letter-spacing-wide;
+    letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
     margin-bottom: $space-16px;
     text-transform: uppercase;
@@ -85,7 +85,7 @@
     color: $color-text;
     font-size: $font-size-base;
     font-weight: 400;
-    letter-spacing: $letter-spacing-wide;
+    letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
     margin-bottom: $space-32px;
     text-align: center;
@@ -141,10 +141,17 @@
   }
 
   &__block:has(.btn) {
-    padding: $space-24px;
+    display: flex;
+    flex-direction: column;
+    padding: $space-16px;
+
+    p {
+      font-size: $font-size-sm;
+    }
   }
 
   &__block .btn {
+    margin-top: auto;
     min-height: 36px;
     padding: $space-4px $space-16px;
 
@@ -159,10 +166,13 @@
     font-size: $font-size-sm;
     line-height: $line-height-loose;
     margin: auto 1em 0;
+    overflow-wrap: break-word;
     padding: 0 0.5em 1.5em;
+
     &:last-child {
       padding-bottom: 1.5em;
     }
+
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-base;
       padding: 0 $space-16px $space-16px;
@@ -209,17 +219,6 @@
 
   &__text {
     flex: 1;
-  }
-
-  &__subheading {
-    font-size: $font-size-base;
-    letter-spacing: $letter-spacing-wide;
-    line-height: $line-height-snug;
-    margin-bottom: $space-16px;
-
-    @media (min-width: #{$bp-tablet + 1px}) {
-      font-size: $font-size-page-title;
-    }
   }
 
   &__body {
@@ -313,31 +312,8 @@
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-  }
-}
-
-// ─── Why Choose Us quote ─────────────────────────────────────────────────────
-
-.why-quote {
-  padding: $space-32px $space-24px;
-
-  &__text {
-    color: $color-text;
-    font-size: $font-size-sm;
-    line-height: $line-height-loose;
-    margin-bottom: $space-16px;
-
-    @media (min-width: #{$bp-tablet + 1px}) {
-      font-size: $font-size-base;
-    }
-  }
-
-  &__attribution {
-    color: $color-text-medium;
-    font-size: $font-size-sm;
-    font-weight: 700;
   }
 }
 
@@ -347,7 +323,7 @@
   &__heading {
     color: $color-white;
     font-size: $font-size-base;
-    letter-spacing: $letter-spacing-wide;
+    letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
     margin-bottom: $space-16px;
     text-transform: uppercase;

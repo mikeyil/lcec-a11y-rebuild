@@ -9,7 +9,7 @@ projects_heading: "Featured Projects"
 projects:
   - title: "American College of Physicians (ACP) Medical Knowledge Self-Assessment Program (MKSAP) Web Accessibility Evaluation & VPAT"
     image: "/img/portfolio-projects-1.jpg"
-  - title: "Web Accessibility Evaluation using VoiceOver — Articulate 360 Online Courses"
+  - title: "Web Accessibility Evaluation Using VoiceOver — Articulate 360 Online Courses"
     image: "/img/portfolio-projects-2.jpg"
 cta:
   heading: "Contact Us"

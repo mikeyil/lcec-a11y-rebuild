@@ -16,7 +16,7 @@ announcement:
   body: "Is your website and digital content ready?"
   link_text: "ADA Title II Web and Mobile App Accessibility Rule"
   link_url: "https://www.ada.gov/resources/web-rule-first-steps/"
-stats_heading: "Most organizations don't know they have accessibility gaps."
+stats_heading: "Most Organizations Don't Know They Have Accessibility Gaps."
 stats:
   - value: "98%"
     label: "of websites have detectable WCAG accessibility failures (WebAIM)"

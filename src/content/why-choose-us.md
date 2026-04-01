@@ -23,12 +23,7 @@ credentials:
   - "Former National Board Certified Teacher (Exceptional Needs Specialist)"
   - "Apple Teacher Certified"
 quote:
-  text: "\u201CACP (American College of Physicians) worked with Laura to conduct an accessibility review of our cross-platform digital product, ACP MKSAP, not only to comply with customer requests for a VPAT, but to better serve our users. She met with our team, took the time to understand our product, and then conducted the full review using a combination of automated and manual testing, including the use of multiple different screen readers. Her turnaround time was prompt and the results were well organized into a prioritized to-do list that allowed our team to tackle the most important problems first. We plan to continue working with Laura as we make further improvements to our software or add new features, and we would enthusiastically recommend her to other organizations with similar needs.\u201D"
+  text: "ACP (American College of Physicians) worked with Laura to conduct an accessibility review of our cross-platform digital product, ACP MKSAP, not only to comply with customer requests for a VPAT, but to better serve our users. She met with our team, took the time to understand our product, and then conducted the full review using a combination of automated and manual testing, including the use of multiple different screen readers. Her turnaround time was prompt and the results were well organized into a prioritized to-do list that allowed our team to tackle the most important problems first. We plan to continue working with Laura as we make further improvements to our software or add new features, and we would enthusiastically recommend her to other organizations with similar needs."
   attribution: "American College of Physicians, ACP MKSAP Team"
-cta:
-  heading: "Ready to get started?"
-  subheading: "Book a Free 30-Minute Discovery Call"
-  button_text: "Schedule Call"
-  button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---
 

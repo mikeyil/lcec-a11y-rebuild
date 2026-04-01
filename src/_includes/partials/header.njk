@@ -62,7 +62,7 @@
       {% if link.dropdown %}
         {% for child in link.children %}
         <li>
-          <a href="{{ child.url | url }}" class="mobile-nav__link">{{ child.text }}</a>
+          <a href="{{ child.url | url }}" class="mobile-nav__link" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.text }}</a>
         </li>
         {% endfor %}
       {% elif link.external %}
@@ -71,7 +71,7 @@
         </li>
       {% else %}
         <li>
-          <a href="{{ link.url | url }}" class="mobile-nav__link">{{ link.text }}</a>
+          <a href="{{ link.url | url }}" class="mobile-nav__link" {% if page.url == link.url %}aria-current="page"{% endif %}>{{ link.text }}</a>
         </li>
       {% endif %}
     {% endfor %}

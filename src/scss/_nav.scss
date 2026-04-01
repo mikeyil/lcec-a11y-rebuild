@@ -314,7 +314,8 @@
 // ─── Mobile nav panel ─────────────────────────────────────────────────────────
 
 .mobile-nav {
-  background-color: $color-primary-light;
+  background-color: $color-primary-dark;
+  border-radius: 0 $space-16px $space-16px 0;
   box-shadow: $shadow-card;
   display: flex;
   flex-direction: column;
@@ -344,7 +345,7 @@
 .mobile-nav__close {
   background: none;
   border: none;
-  color: $color-primary;
+  color: $color-white;
   cursor: pointer;
   line-height: 0;
   padding: 0;
@@ -357,7 +358,7 @@
   }
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary;
+    outline: $focus-outline-stroke $color-primary-light;
     outline-offset: $focus-outline-offset;
   }
 }
@@ -370,7 +371,7 @@
 }
 
 .mobile-nav__link {
-  color: $color-text;
+  color: $color-white;
   display: block;
   font-size: $font-size-sm;
   font-weight: 400;
@@ -381,13 +382,28 @@
   text-transform: uppercase;
 
   &:hover {
-    color: $color-primary;
+    color: $color-primary-light;
   }
 
   &:focus {
-    color: $color-primary;
-    outline: $focus-outline-stroke $color-primary;
+    color: $color-primary-light;
+    outline: $focus-outline-stroke $color-primary-light;
     outline-offset: $focus-outline-offset;
+  }
+
+  &[aria-current="page"] {
+    font-weight: 700;
+
+    &::before {
+      background-color: $color-primary-light;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 6px;
+      margin-right: 0.5em;
+      vertical-align: middle;
+      width: 6px;
+    }
   }
 }
 

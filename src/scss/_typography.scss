@@ -46,7 +46,7 @@ h5 {
 
 h6 {
   font-size: $font-size-sm;
-  letter-spacing: $letter-spacing-wide;
+  letter-spacing: $letter-spacing-body;
   text-transform: uppercase;
 }
 
@@ -122,7 +122,7 @@ address a {
 .heading--section {
   font-size: $font-size-base;
   font-weight: 400;
-  letter-spacing: $letter-spacing-wide;
+  letter-spacing: $letter-spacing-body;
   line-height: $line-height-snug;
   margin-bottom: $space-16px;
   text-align: center;
@@ -131,6 +131,51 @@ address a {
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-page-title;
     text-align: left;
+  }
+}
+
+// ─── Detail Headings ─────────────────────────────────────────────────────────
+// h2/h3 pair for split-layout content columns (bio, credentials, etc.)
+
+.detail-heading {
+  font-size: $font-size-base;
+  font-weight: 400;
+  letter-spacing: $letter-spacing-body;
+  line-height: $line-height-snug;
+  margin-bottom: $space-16px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    font-size: $font-size-page-title;
+    text-align: left;
+  }
+}
+
+// Bold tagline/subheading — appears as intro text in split-layout columns.
+// Bold on mobile, normal weight on desktop; no uppercase or centering.
+.tagline {
+  font-size: $font-size-base;
+  font-weight: 700;
+  letter-spacing: $letter-spacing-body;
+  line-height: $line-height-snug;
+  margin-bottom: $space-16px;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    font-size: $font-size-page-title;
+    font-weight: 400;
+  }
+}
+
+.detail-subheading {
+  font-size: $font-size-base;
+  font-weight: 400;
+  letter-spacing: $letter-spacing-body;
+  line-height: $line-height-snug;
+  margin-bottom: $space-16px;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    font-size: $font-size-3xl;
   }
 }
 

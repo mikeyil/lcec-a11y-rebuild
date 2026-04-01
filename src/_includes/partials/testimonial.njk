@@ -1,0 +1,11 @@
+<section class="section testimonial--{{ variant | default('dark') }}{% if section_class %} {{ section_class }}{% endif %}">
+  <div class="container">
+    {% if testimonial_heading %}
+    <h2 class="section-heading">{{ testimonial_heading }}</h2>
+    {% endif %}
+    <blockquote class="testimonial">
+      <p class="testimonial__text">&ldquo;{{ quote.text }}&rdquo;</p>
+      <footer class="testimonial__attribution">&mdash; {{ quote.attribution }}</footer>
+    </blockquote>
+  </div>
+</section>

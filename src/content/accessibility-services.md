@@ -2,9 +2,6 @@
 layout: accessibility-services.njk
 title: Accessibility Services
 description: "Manual accessibility testing, VPAT writing, PDF remediation, and remediation roadmaps for schools, higher education, and organizations."
-page_title:
-  heading: "Accessibility Services"
-  subheading: "We work with school districts, higher education, and organizations to make digital content accessible, compliant, and inclusive."
 intro:
   heading: "How LC Education Consulting Can Help"
   subheading: "We work with school districts, higher education, and organizations to make digital content accessible, compliant, and inclusive."
@@ -38,10 +35,5 @@ services:
       - "Written for developers and non-technical staff"
       - "Includes timeline recommendations"
       - "Follow-up review available after remediation"
-cta:
-  heading: "Ready to get started?"
-  subheading: "Book a Free 30-Minute Discovery Call"
-  button_text: "Schedule Call"
-  button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---
 

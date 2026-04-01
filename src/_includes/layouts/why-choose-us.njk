@@ -7,7 +7,7 @@ layout: base.njk
     <div class="bio-layout">
       <img src="{{ '/img/laura-cantagallo.webp' | url }}" alt="Laura Cantagallo, founder of LC Education Consulting" class="bio-layout__photo" width="400" height="400" />
       <div class="bio-layout__text">
-        <h2 class="bio-layout__subheading">{{ page_title.subheading }}</h2>
+        <h2 class="tagline">{{ page_title.subheading }}</h2>
         {% for paragraph in body %}
         <p class="bio-layout__body">{{ paragraph }}</p>
         {% endfor %}
@@ -24,7 +24,7 @@ layout: base.njk
   <div class="container">
     <div class="credentials-layout">
       <div class="credentials-layout__text">
-        <h2 class="bio-layout__subheading">{{ credentials_heading }}</h2>
+        <h2 class="detail-heading">{{ credentials_heading }}</h2>
         <ul class="credentials-list">
           {% for item in credentials %}
           <li>{{ item }}</li>
@@ -36,14 +36,8 @@ layout: base.njk
   </div>
 </section>
 
-<section class="section section--white section--flush-bottom">
-  <div class="container">
-    <h2 class="content-blocks__heading">What Clients Have to Say</h2>
-    <div class="content-blocks__block why-quote">
-      <p class="why-quote__text">{{ quote.text }}</p>
-      <p class="why-quote__attribution">&mdash; {{ quote.attribution }}</p>
-    </div>
-  </div>
-</section>
+{% set variant = "light" %}
+{% set testimonial_heading = "What Clients Have to Say" %}
+{% include "partials/testimonial.njk" %}
 
 {% include "partials/social-section.njk" %}

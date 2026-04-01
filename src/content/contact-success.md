@@ -13,7 +13,7 @@ contact_block:
   email: "laura@lceducationconsulting.com"
   email_href: "mailto:laura@lceducationconsulting.com"
 cta:
-  heading: "Want to connect sooner?"
+  heading: "Want to Connect Sooner?"
   subheading: "Book a Free 30-Minute Discovery Call"
   button_text: "Schedule Call"
   button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"

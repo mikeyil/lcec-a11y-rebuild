@@ -10,7 +10,7 @@
   font-size: $font-size-sm;
   font-weight: 400;
   justify-content: center;
-  letter-spacing: $letter-spacing-wide;
+  letter-spacing: $letter-spacing-body;
   line-height: $line-height-tight;
   min-height: $nav-height;
   padding: $space-8px $space-24px;
@@ -117,7 +117,7 @@
 
   p {
     font-size: $font-size-sm;
-    letter-spacing: $letter-spacing-wide;
+    letter-spacing: $letter-spacing-body;
     max-width: 36rem;
     text-align: center;
     text-transform: uppercase;
@@ -165,16 +165,49 @@
   }
 }
 
-// ─── Testimonial / Quote ──────────────────────────────────────────────────────
+// ─── Testimonial ─────────────────────────────────────────────────────────────
 
-.quote-block {
+.testimonial {
   margin: 0 auto;
   max-width: 800px;
   padding: $space-32px $space-24px;
   text-align: center;
+}
 
-  &__text {
-    color: $color-white;
+.testimonial--dark {
+  background-color: $color-bg-testimonial;
+  color: $color-white;
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    color: #545454;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 32rem;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &::before {
+    content: '\201C';
+    left: -0.05em;
+    top: -0.25em;
+  }
+
+  &::after {
+    bottom: -0.45em;
+    content: '\201D';
+    right: -0.05em;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial__text {
     font-size: $font-size-xl;
     font-weight: 700;
     letter-spacing: 1px;
@@ -187,81 +220,46 @@
     }
   }
 
-  &__attribution {
-    color: $color-white;
+  .testimonial__attribution {
     font-size: $font-size-sm;
     font-weight: 700;
   }
 }
 
-// ─── Service Cards ────────────────────────────────────────────────────────────
-.services-grid {
-  display: grid;
-  gap: $space-24px;
-  grid-template-columns: 1fr;
-  margin-top: $space-32px;
+.testimonial--light {
+  background-color: $color-white;
 
-  @media (min-width: #{$bp-tablet + 1px}) {
-    grid-template-columns: repeat(2, 1fr);
+  .testimonial {
+    background-color: $color-primary-light;
+  }
+
+  .testimonial__text {
+    color: $color-text;
+    font-size: $font-size-sm;
+    line-height: $line-height-loose;
+    margin-bottom: $space-16px;
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      font-size: $font-size-base;
+    }
+  }
+
+  .testimonial__attribution {
+    color: $color-text-medium;
+    font-size: $font-size-sm;
+    font-weight: 700;
   }
 }
 
-.service-card, .training-card {
-  @extend .card;
-}
-
-.service-card__heading,
-.training-card__heading {
-  color: $color-primary;
-  font-size: $font-size-lg;
-  font-weight: 400;
-
-  @media (min-width: #{$bp-tablet + 1px}) {
-    font-size: $font-size-xl;
-  }
-}
-
-.service-card__description,
+// ─── Training Card ───────────────────────────────────────────────────────────
 .training-card__description {
   color: $color-text-medium;
   font-size: $font-size-sm;
   line-height: $line-height-loose;
+  margin-bottom: $space-24px;
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-base;
-  }
-}
-
-.service-card {
-  &__heading {
-    line-height: $line-height-snug;
-    margin-bottom: $space-16px;
-  }
-
-  &__description {
-    margin-bottom: $space-16px;
-  }
-
-  &__features {
-    @extend .list--disc;
-    margin: $space-16px 0;
-
-    li {
-      color: $color-text;
-    }
-  }
-
-  &__case-study {
-    color: $color-text-medium;
-    font-size: $font-size-sm;
-    font-style: italic;
-    margin-top: $space-16px;
-  }
-}
-
-.training-card {
-  &__heading {
-    margin-bottom: $space-8px;
   }
 }
 

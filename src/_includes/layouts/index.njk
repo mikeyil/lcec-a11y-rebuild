@@ -23,7 +23,7 @@ layout: base.njk
     <h2 class="section-heading text-titlecase">{{ announcement.heading }}</h2>
     <p class="section-subheading">{{ announcement.subheading | safe }}</p>
     <p>{{ announcement.body }}</p>
-    <a href="{{ announcement.link_url }}" class="btn btn--ghost mt-4" target="_blank" rel="noopener">{{ announcement.link_text }}</a>
+    <a href="{{ announcement.link_url }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ announcement.link_text }}</a>
   </div>
 </section>
 
@@ -41,13 +41,6 @@ layout: base.njk
   </div>
 </section>
 
-<section class="section section--gray">
-  <div class="container">
-    <blockquote class="quote-block">
-      <p class="quote-block__text">&ldquo;{{ quote.text }}&rdquo;</p>
-      <footer class="quote-block__attribution">&mdash; {{ quote.attribution }}</footer>
-    </blockquote>
-  </div>
-</section>
+{% include "partials/testimonial.njk" %}
 
 {% include "partials/social-section.njk" %}
