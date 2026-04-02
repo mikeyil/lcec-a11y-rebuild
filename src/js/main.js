@@ -294,6 +294,8 @@ function initFooterNavToggle() {
   if (localStorage.getItem(FOOTER_NAV_COLLAPSED_KEY) === '1') setCollapsed(true);
 
   btn.addEventListener('click', () => setCollapsed(!wrapper.classList.contains('is-collapsed')));
+}
+
 // ─── Exit Modal ──────────────────────────────────────────────────────────────
 function initExitModal() {
   const modal = document.getElementById('exit-modal');
