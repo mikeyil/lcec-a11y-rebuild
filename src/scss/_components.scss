@@ -102,7 +102,8 @@
 .announcement-bar {
   background-color: $color-primary-dark;
   color: $color-white;
-  padding: $space-4px $space-16px $space-16px;
+  overflow: visible;
+  position: relative;
 
   &__inner {
     align-items: center;
@@ -110,10 +111,16 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 100%;
-    padding: $space-4px 0;
+    padding: $space-4px $space-16px $space-16px;
+
+    @media (max-width: $bp-tablet) {
+      max-height: 200px;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
 
     @media (min-width: #{$bp-tablet + 1px}) {
-      padding: $space-4px $space-40px;
+      padding: $space-4px $space-40px $space-16px;
     }
   }
 
@@ -127,6 +134,49 @@
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-base;
+    }
+  }
+
+  &__toggle {
+    background-color: $color-primary-dark;
+    border: none;
+    border-radius: 0 0 $space-8px $space-8px;
+    bottom: 0;
+    color: $color-white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    padding: $space-4px $space-16px $space-8px;
+    position: absolute;
+    transform: translate(-50%, 100%);
+    z-index: 2;
+
+    svg {
+      transition: transform 0.35s ease;
+    }
+
+    &:focus {
+      @include focus-outline($color-white);
+    }
+
+    @media (min-width: #{$bp-tablet + 1px}) {
+      display: none;
+    }
+  }
+
+  &.is-collapsed {
+    @media (max-width: $bp-tablet) {
+      .announcement-bar__inner {
+        max-height: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+
+    .announcement-bar__toggle svg {
+      transform: rotate(180deg);
     }
   }
 }

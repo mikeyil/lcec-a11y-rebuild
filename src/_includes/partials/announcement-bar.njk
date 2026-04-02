@@ -1,5 +1,14 @@
-<aside class="announcement-bar">
-  <div class="announcement-bar__inner">
+<aside class="announcement-bar" id="announcement-bar">
+  <div class="announcement-bar__inner" id="announcement-bar-content">
     <p>{{ announcement.announcement | safe }}</p>
   </div>
+  <button
+    class="announcement-bar__toggle"
+    aria-expanded="true"
+    aria-controls="announcement-bar-content"
+    aria-label="Collapse announcement">
+    <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="10" height="6" aria-hidden="true">
+      <polyline points="0,5 5,0 10,5"/>
+    </svg>
+  </button>
 </aside>

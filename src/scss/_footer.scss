@@ -7,7 +7,10 @@
   background-color: $color-primary;
   color: $color-text-on-dark;
   margin-top: auto;
+  overflow: visible;
   padding: $space-16px 0;
+  position: relative;
+
   @media (min-width: #{$bp-tablet + 1px}) {
     padding: $space-32px 0 $space-24px;
   }
@@ -34,10 +37,56 @@
   }
 }
 
+.footer-nav-wrapper {
+  width: 100%;
+
+  @media (max-width: $bp-tablet) {
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+
+    &.is-collapsed {
+      max-height: 0;
+    }
+  }
+}
+
+.footer-nav-toggle {
+  background-color: $color-primary;
+  border: none;
+  border-radius: $space-8px $space-8px 0 0;
+  color: $color-text-on-dark;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  padding: $space-8px $space-16px $space-4px;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -100%);
+  z-index: 2;
+
+  svg {
+    transition: transform 0.35s ease;
+  }
+
+  &:focus {
+    @include focus-outline($color-white);
+  }
+
+  &[aria-expanded="false"] svg {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    display: none;
+  }
+}
+
 .footer-nav {
   &__list {
     @include flexbox(column);
-    gap: $space-8px;
     gap: $space-8px;
     margin: 0;
     padding: 0;

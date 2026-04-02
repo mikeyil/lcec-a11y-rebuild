@@ -252,12 +252,57 @@ function initExternalLinks() {
   });
 }
 
+// ─── Announcement bar toggle ─────────────────────────────────────────────────
+const ANNOUNCE_COLLAPSED_KEY = 'lc_announce_collapsed';
+
+function initAnnouncementToggle() {
+  const bar     = document.getElementById('announcement-bar');
+  const btn     = bar && bar.querySelector('.announcement-bar__toggle');
+  const content = document.getElementById('announcement-bar-content');
+  if (!bar || !btn || !content) return;
+
+  function setCollapsed(collapsed) {
+    bar.classList.toggle('is-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.setAttribute('aria-label', collapsed ? 'Expand announcement' : 'Collapse announcement');
+    localStorage.setItem(ANNOUNCE_COLLAPSED_KEY, collapsed ? '1' : '0');
+  }
+
+  // Restore persisted state before first paint
+  if (localStorage.getItem(ANNOUNCE_COLLAPSED_KEY) === '1') setCollapsed(true);
+
+  btn.addEventListener('click', () => setCollapsed(!bar.classList.contains('is-collapsed')));
+}
+
+// ─── Footer nav toggle ───────────────────────────────────────────────────────
+const FOOTER_NAV_COLLAPSED_KEY = 'lc_footer_nav_collapsed';
+
+function initFooterNavToggle() {
+  const wrapper = document.getElementById('footer-nav-content');
+  const btn     = document.querySelector('.footer-nav-toggle');
+  if (!wrapper || !btn) return;
+
+  function setCollapsed(collapsed) {
+    wrapper.classList.toggle('is-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.setAttribute('aria-label', collapsed ? 'Expand footer navigation' : 'Collapse footer navigation');
+    localStorage.setItem(FOOTER_NAV_COLLAPSED_KEY, collapsed ? '1' : '0');
+  }
+
+  // Restore persisted state before first paint
+  if (localStorage.getItem(FOOTER_NAV_COLLAPSED_KEY) === '1') setCollapsed(true);
+
+  btn.addEventListener('click', () => setCollapsed(!wrapper.classList.contains('is-collapsed')));
+}
+
 // ─── Single Init Function ─────────────────────────────────────────────────--
 function initUI() {
   initNavigation();
   initCookieBanner();
   initContactForm();
   initExternalLinks();
+  initAnnouncementToggle();
+  initFooterNavToggle();
 }
 
 document.addEventListener('DOMContentLoaded', initUI);
