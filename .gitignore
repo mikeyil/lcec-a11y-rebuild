@@ -31,3 +31,5 @@ Thumbs.db
 
 # GitHub Pages artifacts (Actions handles these)
 .github/pages/
+lcec.code-workspace
+.claude/settings.json
