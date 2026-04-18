@@ -86,7 +86,8 @@
   }
 </style>
 <link rel="stylesheet" href="{{ '/css/main.css' | url }}" />
-{% if site.umamiId %}
-<link rel="preconnect" href="https://cloud.umami.is" />
-<script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiId }}"></script>
+{% if site.gaId %}
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.gaId }}');</script>
 {% endif %}

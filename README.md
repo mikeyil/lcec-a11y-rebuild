@@ -12,7 +12,7 @@ Source repository for the LC Education Consulting website, built with Eleventy, 
 | JavaScript | esbuild → compiled to `dist/js/main.js` |
 | Forms | Netlify Forms with reCAPTCHA |
 | Fonts | Self-hosted — Lato 400 & 700 (woff2) |
-| Analytics | Umami (optional — set `umamiId` in `src/_data/site.json`) |
+| Analytics | Google Analytics 4 (optional — set `gaId` in `src/_data/site.json`) |
 
 ## Project Structure
 
@@ -151,6 +151,6 @@ Netlify features in use:
 
 ## Notes
 
-- To enable Umami analytics, add `"umamiId": "your-id-here"` to `src/_data/site.json`
+- To enable Google Analytics, set `"gaId": "G-XXXXXXXXXX"` in `src/_data/site.json`
 - `site.url` is defined in both `.eleventy.js` (as `addGlobalData`) and `src/_data/site.json` — keep these in sync
 - `PATH_PREFIX` env var is set in the GitHub Actions workflow to match the Pages deployment path; change to `/` when deploying to a custom domain
