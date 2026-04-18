@@ -2,12 +2,12 @@ backend:
   name: github
   repo: lauracantagallo/lcec-prod
   branch: main
-  base_url: https://lcec-cms-auth.workers.dev
+  base_url: https://lcec-cms-auth.royal-queen-bb70.workers.dev
 
 # Local development: run `npx decap-server` alongside `npm run dev`
 local_backend: true
 
-logo_url: /img/logo-lcec.jpg
+logo_url: https://lauracantagallo.github.io/lcec-dev/img/logo-lcec.jpg
 
 media_folder: src/img
 public_folder: /img
