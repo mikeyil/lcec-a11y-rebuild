@@ -11,17 +11,17 @@ layout: base.njk
   <div class="container">
     <div class="content-blocks__grid content-blocks__grid--cols-3">
       <article class="content-blocks__block">
-        <h2 class="content-blocks__block-heading">Office</h2>
+        <h3 class="content-blocks__block-heading">Office</h3>
         <p>{{ office.location }}</p>
         <a href="{{ office.map_url }}" class="btn btn--outline">Map</a>
       </article>
       <article class="content-blocks__block">
-        <h2 class="content-blocks__block-heading">Phone</h2>
+        <h3 class="content-blocks__block-heading">Phone</h3>
         <p><a href="{{ office.phone_href }}">{{ office.phone }}</a></p>
         <a href="{{ office.phone_href }}" class="btn btn--outline">Call Now</a>
       </article>
       <article class="content-blocks__block">
-        <h2 class="content-blocks__block-heading">Email</h2>
+        <h3 class="content-blocks__block-heading">Email</h3>
         <p><a href="{{ office.email_href }}">{{ office.email }}</a></p>
         <a href="{{ office.email_href }}" class="btn btn--outline">Email</a>
       </article>
@@ -48,8 +48,9 @@ layout: base.njk
       <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
       <input type="hidden" name="subject" value="New contact form submission — LC Education Consulting" />
       <input type="hidden" name="redirect" value="{{ site.url }}/contact-success/" />
-      <input type="checkbox" name="botcheck" hidden tabindex="-1" aria-hidden="true" />
-      <h3 class="section-heading">{{ form.heading }}</h3>
+      <input type="hidden" name="from_name" value="LC Education Consulting" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
+      <h2 class="section-heading">{{ form.heading }}</h2>
 
       <p class="form-required-note">All fields marked with * are required.</p>
 
@@ -67,7 +68,7 @@ layout: base.njk
 
       <div class="form-field">
         <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
-        <input class="form-input" type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error" />
+        <input class="form-input" type="email" id="email" name="replyto" required autocomplete="email" aria-describedby="email-error" />
         <p class="form-error" id="email-error"></p>
       </div>
 
@@ -111,7 +112,7 @@ layout: base.njk
         </select>
         <p class="form-error" id="contact-method-error"></p>
       </div>
-
+  
       <button type="submit" class="btn btn--outline">Send</button>
 
       <p class="form-privacy">{{ form.privacy_text }}</p>
