@@ -1,4 +1,6 @@
-# LC Education Consulting — Website
+# LC Education Consulting — Website (`dev` branch)
+
+> **This is the staging/development branch.** It contains everything in `main` plus Decap CMS tooling. Work happens here first; changes are merged into `main` for production deployment.
 
 Source repository for the LC Education Consulting website, built with Eleventy, Sass, and esbuild.
 
@@ -77,6 +79,8 @@ lcec/
 │       ├── webinars-and-training.md
 │       ├── contact.md
 │       └── contact-success.md
+├── src/
+│   └── admin/                     # Decap CMS config (dev branch only)
 ├── build/
 │   ├── js.js                      # esbuild script (minifies on build, watches on dev)
 │   ├── images.js                  # Sharp script — converts src/img/ JPGs to WebP
@@ -117,6 +121,14 @@ Runs three watchers in parallel:
 - Eleventy dev server at `http://localhost:8080`
 - Sass (expanded, with source maps)
 - esbuild (unminified, with inline source maps)
+
+### With Decap CMS (dev branch only)
+
+```bash
+npm run dev:cms
+```
+
+Adds a fourth watcher — the local Decap CMS proxy server. The CMS admin UI is available at `http://localhost:8080/admin/` while this command is running. Requires Netlify Identity to be configured on the `lc-dev` Netlify site for authentication.
 
 ## Production Build
 
@@ -174,6 +186,13 @@ This project uses two repositories for separate environments:
 Netlify features in use on staging (`lc-dev`):
 
 - **Headers** — Custom HTTP cache and security headers via `src/static/_headers` (GitHub Pages ignores this file)
+
+## Branch Workflow
+
+- All new work starts on `dev` (or a feature branch off `dev`)
+- `dev` deploys automatically to Netlify for staging review
+- When ready for production, merge `dev` → `main`
+- **On merge from main → dev:** `package.json` will conflict. Always keep the `dev` version to preserve `decap-server` and the `dev:cms`/`dev:decap` scripts.
 
 ## Notes
 
