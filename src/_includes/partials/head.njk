@@ -13,8 +13,8 @@
 <meta property="og:title" content="LC Education Consulting{% if _pageTitle %} - {{ _pageTitle }}{% endif %}" />
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-<meta property="og:image" content="{{ site.url }}/img/og-image.png" />
-<meta property="og:image:alt" content="LC Education Consulting" />
+<meta property="og:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% else %}/img/og-image.png{% endif %}" />
+<meta property="og:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}LC Education Consulting{% endif %}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
@@ -23,8 +23,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="LC Education Consulting{% if _pageTitle %} - {{ _pageTitle }}{% endif %}" />
 <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
-<meta name="twitter:image" content="{{ site.url }}/img/og-image.png" />
-<meta name="twitter:image:alt" content="LC Education Consulting" />
+<meta name="twitter:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% else %}/img/og-image.png{% endif %}" />
+<meta name="twitter:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}LC Education Consulting{% endif %}" />
 
 <!-- JSON-LD: Business schema -->
 <script type="application/ld+json">

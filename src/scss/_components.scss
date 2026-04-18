@@ -86,6 +86,7 @@
 .list--disc {
   list-style: disc;
   padding-left: $paragraph-spacing;
+
   li {
     font-size: $font-size-sm;
     line-height: $line-height-loose;
@@ -174,6 +175,7 @@
   max-width: $max-width-720px;
   padding: $space-24px $space-16px;
   text-align: center;
+
   @media (min-width: #{$bp-tablet + 1px}) {
     padding: $space-32px $space-24px;
   }
@@ -272,8 +274,10 @@
 
 // ─── Profile / Background List ───────────────────────────────────────────────
 .credentials-list {
-  @extend .list--disc;
+  @extend .list--disc; /* stylelint-disable-line scss/at-extend-no-missing-placeholder */
+
   margin: $space-24px 0;
+
   li {
     color: $color-text-medium;
     line-height: $line-height-loose;
@@ -344,6 +348,7 @@
 
   &:focus {
     color: $color-linkedin-dark;
+
     @include focus-outline($color-primary, $radius: true);
   }
 }
