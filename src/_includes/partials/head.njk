@@ -61,6 +61,34 @@
   }
 }
 </script>
+{% if page.url and page.url !== "/" %}
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ page.url | pathToTitle }}", "item": "{{ site.url }}{{ page.url }}" }
+  ]
+}
+</script>
+{% endif %}
+{% if services %}
+<!-- JSON-LD: Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{ services_heading }}",
+  "itemListElement": [
+    {% for service in services %}
+    { "@type": "ListItem", "position": {{ loop.index }}, "item": { "@type": "Service", "name": "{{ service.heading }}", "description": "{{ service.description }}", "provider": { "@type": "ProfessionalService", "name": "{{ site.name }}" } } }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
 
 <link rel="manifest" href="{{ '/manifest.webmanifest' | url }}" />
 <link rel="icon" type="image/svg+xml" href="{{ '/img/favicon.svg' | url }}" />
