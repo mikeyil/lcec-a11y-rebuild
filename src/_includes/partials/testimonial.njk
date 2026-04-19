@@ -3,9 +3,10 @@
     {% if testimonial_heading %}
     <h2 class="section-heading">{{ testimonial_heading }}</h2>
     {% endif %}
+    {% set _q = testimonials.items[0] %}
     <blockquote class="testimonial">
-      <p class="testimonial__text">&ldquo;{{ quote.text }}&rdquo;</p>
-      <footer class="testimonial__attribution">&mdash; {{ quote.attribution }}</footer>
+      <p class="testimonial__text">&ldquo;{{ _q.short if quote_short else _q.text }}&rdquo;</p>
+      <footer class="testimonial__attribution">&mdash; {{ _q.attribution }}</footer>
     </blockquote>
   </div>
 </section>

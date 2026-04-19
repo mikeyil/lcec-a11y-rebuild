@@ -64,7 +64,7 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 
 ## CMS
 
-- [ ] **Wire `testimonials.json` to templates** — CMS edits to Testimonials currently don't appear on the site; templates still pull quotes from page frontmatter. To fix: update `testimonial.njk` and the why-choose-us / homepage layouts to read from `testimonials.items` instead of hardcoded frontmatter fields.
+- [x] **Wire `testimonials.json` to templates** — `testimonial.njk` now reads `testimonials.items[0]`; homepage uses `short` field, why-choose-us uses full `text`; `quote:` blocks removed from both content files
 - [ ] **Test CMS end-to-end on staging** — log in to `lauracantagallo.github.io/lcec-dev/admin`, make a small edit (e.g. announcement bar text), save, confirm the site rebuilds and the change appears on the staging URL within ~3 minutes.
 
 ---

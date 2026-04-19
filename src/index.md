@@ -23,8 +23,5 @@ stats:
     label: "Extended ADA Title II deadline for large public entities (50,000+ population)"
   - value: "30–40%"
     label: "of accessibility issues are caught by automated tools. Manual testing finds the rest."
-quote:
-  text: "Her turnaround time was prompt and the results were well organized into a prioritized to-do list that helped our team address the most important issues first."
-  attribution: "American College of Physicians, ACP MKSAP Team"
 ---
 
