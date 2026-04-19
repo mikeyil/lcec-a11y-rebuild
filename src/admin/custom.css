@@ -74,6 +74,11 @@ header [role="button"]:hover {
   color: #ffffff !important;
 }
 
+[class*="AppHeader"] svg,
+[class*="AppHeader"] svg * {
+  fill: currentColor !important;
+}
+
 /* ── Logo in CMS header ──────────────────────────────────────────────────── */
 [class*="AppHeaderContent"] img,
 [class*="logo"] img {
