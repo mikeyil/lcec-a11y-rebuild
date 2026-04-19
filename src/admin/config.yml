@@ -34,6 +34,12 @@ collections:
           - { label: Country, name: country, widget: string, hint: "Two-letter code, e.g. US" }
           - { label: Founding Year, name: foundingDate, widget: string, hint: "Four-digit year, e.g. 2014" }
           - { label: Founder Name, name: founder, widget: string }
+          - { label: Booking URL, name: calendar_url, widget: string, hint: "The default scheduling link used for all CTA buttons. e.g. https://calendar.app.google/..." }
+          - { label: GA4 Tracking ID, name: gaId, widget: string, required: false, hint: "Google Analytics 4 tracking ID. Leave blank to disable analytics. e.g. G-XXXXXXXXXX" }
+          - { label: LinkedIn URL, name: linkedinUrl, widget: string, required: false, hint: "Full URL to the LC Education Consulting LinkedIn page." }
+          - { label: Google Business Profile URL, name: googleBusinessUrl, widget: string, required: false, hint: "Full URL to the Google Business Profile. Used in structured data." }
+          - { label: Founder Portfolio URL, name: founderUrl, widget: string, required: false, hint: "Full URL to Laura's personal portfolio site." }
+          - { label: Google Search Console Verification ID, name: gscVerificationId, widget: string, required: false, hint: "Verification code from Google Search Console — the value attribute only, not the full meta tag." }
 
       - name: office
         label: Office / Contact Info
@@ -63,7 +69,7 @@ collections:
           - { label: Heading, name: heading, widget: string, hint: "Large heading text in the green CTA block." }
           - { label: Subheading, name: subheading, widget: string, hint: "Smaller text below the heading." }
           - { label: Button Text, name: button_text, widget: string }
-          - { label: Button URL, name: button_url, widget: string, hint: "Full URL for the button link. e.g. https://calendar.app.google/..." }
+          - { label: Button URL, name: button_url, widget: string, required: false, hint: "Leave blank to use the default Booking URL from Site Info." }
 
       - name: navigation
         label: Navigation
@@ -129,7 +135,6 @@ collections:
               - { label: Heading, name: heading, widget: string, hint: "The main H1 headline." }
               - { label: Subheading, name: subheading, widget: text, hint: "Supporting text below the headline." }
               - { label: Primary CTA Text, name: cta_primary_text, widget: string, hint: "Text on the first (primary) button." }
-              - { label: Primary CTA URL, name: cta_primary_url, widget: string, hint: "URL for the primary button — use full URL for external links." }
               - { label: Secondary CTA Text, name: cta_secondary_text, widget: string, hint: "Text on the second button." }
               - { label: Secondary CTA URL, name: cta_secondary_url, widget: string, hint: "URL for the secondary button — use a relative path for internal pages, e.g. /accessibility-services/" }
           - label: Announcement Block
@@ -267,6 +272,7 @@ collections:
             fields:
               - { label: Heading, name: heading, widget: string }
               - { label: Subheading, name: subheading, widget: text, hint: "Longer descriptive text for this section." }
+          - { label: Section Heading, name: trainings_heading, widget: string, hint: "Heading above the training topic list, e.g. 'Training Topics'" }
           - label: Training Topics
             name: trainings
             widget: list
@@ -305,7 +311,7 @@ collections:
               - { label: Heading, name: heading, widget: string }
               - { label: Subheading, name: subheading, widget: string }
               - { label: Button Text, name: button_text, widget: string }
-              - { label: Button URL, name: button_url, widget: string, hint: "Full URL for the button. e.g. https://calendar.app.google/..." }
+              - { label: Button URL, name: button_url, widget: string, required: false, hint: "Leave blank to use the default Booking URL from Site Info." }
 
       - name: contact-success
         label: Contact Success
@@ -330,7 +336,7 @@ collections:
               - { label: Heading, name: heading, widget: string }
               - { label: Subheading, name: subheading, widget: string }
               - { label: Button Text, name: button_text, widget: string }
-              - { label: Button URL, name: button_url, widget: string, hint: "Full URL for the button. e.g. https://calendar.app.google/..." }
+              - { label: Button URL, name: button_url, widget: string, required: false, hint: "Leave blank to use the default Booking URL from Site Info." }
 
       - name: contact
         label: Contact
