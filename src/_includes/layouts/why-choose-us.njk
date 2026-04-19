@@ -9,7 +9,7 @@ layout: base.njk
       <div class="bio-layout__text">
         <h2 class="tagline">{{ page_title.subheading }}</h2>
         {% for paragraph in body %}
-        <p class="bio-layout__body">{{ paragraph }}</p>
+        <p class="bio-layout__body">{{ paragraph | safe }}</p>
         {% endfor %}
       </div>
     </div>
