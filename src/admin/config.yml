@@ -14,6 +14,17 @@ public_folder: /img
 
 collections:
 
+  # ── Getting Started guide ─────────────────────────────────────────────────────
+  - name: guide
+    label: "Getting Started"
+    files:
+      - name: guide
+        label: "How to Use This CMS"
+        file: src/admin/guide.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Guide Content, name: body, widget: markdown }
+
   # ── Site-wide settings ───────────────────────────────────────────────────────
   - name: settings
     label: Settings
