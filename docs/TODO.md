@@ -1,27 +1,72 @@
 # Site TODO
 
+Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
+
+---
+
 ## Before Launch — Blockers
 
-- [ ] **Configure Web3Forms** — create a free account at web3forms.com (use Laura's email), get the access key, then add it as a GitHub Actions secret named `WEB3FORMS_KEY` in both `lcec-prod` and `lcec-dev` repos (Settings → Secrets and variables → Actions)
-- [ ] **Configure GA4** — get tracking ID from Google Analytics, set `"gaId": "G-XXXXXXXXXX"` in `src/_data/site.json`
-- [ ] **GA4 consent gating** — GA4 fires before cookie consent is acknowledged; implement GA4 Consent Mode or delay `gtag` init until the accept button is clicked
-- [ ] **Custom domain on `lcec-prod`** — configure DNS (CNAME/A record pointing to `lauracantagallo.github.io`), then set the `PATH_PREFIX` repo variable to `/` in `lcec-prod` so asset paths resolve correctly
-- [ ] **Test contact form end-to-end** — submit a real entry and confirm Laura receives the email with correct reply-to (requires Web3Forms key above)
+- [ ] **Configure Web3Forms** `[security]` — create a free account at web3forms.com (use Laura's email), get the access key, then add it as a GitHub Actions secret named `WEB3FORMS_KEY` in both `lcec-prod` and `lcec-dev` repos (Settings → Secrets and variables → Actions)
+- [ ] **Configure GA4** `[seo]` — get tracking ID from Google Analytics, set `"gaId": "G-XXXXXXXXXX"` in `src/_data/site.json`
+- [ ] **GA4 consent gating** `[security]` — GA4 fires before cookie consent is acknowledged; implement GA4 Consent Mode or delay `gtag` init until the accept button is clicked
+- [ ] **Custom domain on `lcec-prod`** `[seo]` — configure DNS (CNAME/A record pointing to `lauracantagallo.github.io`), then set the `PATH_PREFIX` repo variable to `/` in `lcec-prod` so asset paths resolve correctly
+- [ ] **Test contact form end-to-end** `[content]` — submit a real entry and confirm Laura receives the email with correct reply-to (requires Web3Forms key above)
+
+---
 
 ## Before Launch — Should Do
 
-- [ ] **Google Business Profile** — create a profile for LC Education Consulting, then paste the URL into `site.json` → `"googleBusinessUrl"`; it will automatically appear in the business schema `sameAs` array
-- [ ] **Laura's personal LinkedIn** — if she has one, add the URL to the `Person` schema `sameAs` in `head.njk` (or add a `founderLinkedinUrl` field to `site.json`)
-- [ ] **Business hours** — confirm with Laura, then add `openingHoursSpecification` to the `ProfessionalService` schema in `head.njk`
-- [ ] Review `contact-success` page — visual check that it renders cleanly and has a clear next step for the user
-- [ ] Style 404 page
-- [ ] Screen reader testing
+- [ ] **Google Business Profile** `[seo]` — create a profile for LC Education Consulting, then paste the URL into `site.json` → `"googleBusinessUrl"`; it will automatically appear in the business schema `sameAs` array
+- [ ] **Google Search Console** `[seo]` — verify ownership by pasting the GSC verification code into `site.json` → `"gscVerificationId"`; then submit the sitemap
+- [ ] **`og:image`** `[seo]` — currently uses a generic `/img/og-image.png`; a real branded image (1200×630) would improve link previews on LinkedIn, Slack, and iMessage
+- [ ] **Laura's personal LinkedIn** `[seo]` — if she has one, add the URL to the `Person` schema `sameAs` in `head.njk` (or add a `founderLinkedinUrl` field to `site.json`)
+- [ ] **Business hours** `[seo]` — confirm with Laura, then add `openingHoursSpecification` to the `ProfessionalService` schema in `head.njk`
+- [ ] Review `contact-success` page `[content]` — visual check that it renders cleanly and has a clear next step for the user
+- [ ] Style 404 page `[content]`
+- [ ] Screen reader testing `[a11y]`
+
+---
+
+## Security
+
+- [ ] **npm audit in CI** `[security]` — add `npm audit --audit-level=high` to the GitHub Actions workflow so dependency vulnerabilities fail the build
+- [ ] **Content Security Policy** `[security]` — add `<meta http-equiv="Content-Security-Policy">` or a `_headers` file to restrict script/style sources; GA4, Web3Forms, and fonts are the main allowed origins
+- [ ] **Referrer-Policy** `[security]` — add `<meta name="referrer" content="strict-origin-when-cross-origin">` to `head.njk`
+- [ ] **SRI hash on GA4 script** `[security]` — add `integrity` attribute to the Google Tag Manager `<script>` once the GA4 tracking ID is configured
+
+---
+
+## Optimization
+
+- [ ] **PurgeCSS** `[optimization]` — strip unused CSS at build time; must carefully safelist JS-toggled classes (`.is-open`, `.nav-open`, `.has-error`, `.is-visible`, `.is-collapsed`, `.modal-open`) to avoid stripping active-state styles
+- [ ] **Touch target sizes** `[a11y]` `[optimization]` — `.mobile-nav-toggle` and `.mobile-nav__close` currently have `padding: 0` with 24×24px SVGs (meets WCAG 2.5.8 minimum exactly). Consider adding `padding: 8px` to push tap target toward the 44×44px WCAG 2.5.5 AAA recommendation
+
+---
+
+## Assistive Technology Testing
+
+> **AI-generated items — not yet manually vetted.** The following were suggested by an AI assistant and should be reviewed and confirmed by a human accessibility specialist before marking complete.
+
+- [ ] **`aria-modal` JAWS compatibility** `[a11y]` — confirm the exit modal dialog is announced correctly by JAWS; `aria-modal` is not fully supported in older JAWS versions and may require a scroll-lock fallback
+- [ ] **`aria-live` JAWS test** `[a11y]` — verify contact form `aria-live` error regions are read aloud by JAWS on field blur and form submit
+- [ ] **Heading navigation** `[a11y]` — test all pages with NVDA/JAWS heading navigation (H key) to ensure heading hierarchy is logical and complete
+- [ ] **Landmark navigation** `[a11y]` — verify `<header>`, `<main>`, `<nav>`, `<footer>`, and any `<section>` elements are reachable and correctly labeled when navigating by landmark
+- [ ] **TalkBack (Android)** `[a11y]` — test core user flows (nav, contact form, CTA links) with TalkBack enabled on Android
+- [ ] **VoiceOver iOS** `[a11y]` — test core user flows with VoiceOver on iPhone; pay attention to modal focus and swipe navigation
+- [ ] **Reflow at 400% zoom** `[a11y]` — verify no content is lost or requires horizontal scrolling when the browser is set to 400% zoom (WCAG 1.4.10)
+- [ ] **Text resize at 200%** `[a11y]` — verify layout does not break when browser font size is set to 200% (WCAG 1.4.4)
+- [ ] **Dark mode** `[a11y]` — check that text contrast and image legibility hold in OS-level dark mode; the site does not currently declare a `color-scheme`
+- [ ] **Focus visibility at 200% DPI scale** `[a11y]` — test focus outlines remain visible on Windows with display scaling at 200%
+- [ ] **No-JS nav fallback** `[a11y]` — the mobile nav toggle requires JavaScript; confirm the navigation is still reachable without JS (at minimum the desktop nav should be visible)
+
+---
 
 ## Nice to Have
 
-- [ ] **`og:image`** — currently uses a generic `/img/og-image.png`; a real branded image (1200×630) would improve link previews on LinkedIn, Slack, and iMessage
-- [ ] **Web3Forms `from_name`** — JS snippet to sync the `your_name` field into the hidden `from_name` input before submit, so Laura's inbox shows the submitter's name instead of "LC Education Consulting"
-- [ ] **Review schema** — once Google Business reviews exist, add `AggregateRating` to the `ProfessionalService` schema for potential star rating rich results
+- [ ] **Web3Forms `from_name`** `[content]` — JS snippet to sync the `your_name` field into the hidden `from_name` input before submit, so Laura's inbox shows the submitter's name instead of "LC Education Consulting"
+- [ ] **Review schema** `[seo]` — once Google Business reviews exist, add `AggregateRating` to the `ProfessionalService` schema for potential star rating rich results
+
+---
 
 ## Code Quality
 
@@ -30,6 +75,7 @@
 - [x] Dereference hardcoded phone in `header.njk` — now uses `{{ office.phone_href }}` / `{{ office.phone }}`
 - [x] Extract `makeCollapseToggle` factory in `main.js` — shared by `initAnnouncementToggle` and `initFooterNavToggle`
 - [x] Replace `innerHTML` SVG injection in `initExternalLinks` with `createElementNS` DOM API calls
+- [x] Remove dead `.social-link--vcard` handler from `main.js` (dev-branch contamination)
 
 ## DRY Opportunities
 
@@ -43,6 +89,14 @@
 
 ## Resolved
 
+- [x] Internal links added to Our Story and Why Choose Us body copy — links to `/accessibility-services/` and `/webinars-and-training/`; `| safe` filter added to both layout templates to render anchor tags in frontmatter strings
+- [x] Heading hierarchy fix — Webinars & Training page was rendering the same text at both `<h1>` and `<h2>`; fixed by adding `trainings_heading: "Training Topics"` to front matter
+- [x] Placeholder text contrast — `#a9a9a9` (~2.35:1 on white, WCAG fail) replaced with `$color-placeholder: #6b6b6b` (~5.3:1 on white, WCAG AA pass)
+- [x] Removed `twitterHandle` from `site.json` and `twitter:site` meta tag from `head.njk` — Laura does not use Twitter
+- [x] `loading="lazy"` — added to `webinars-and-training.njk` image (already present on all other below-fold images)
+- [x] Image `width`/`height` attributes — added `width="600" height="400"` to `webinars-and-training.njk` and `why-choose-us.njk` career photo to prevent layout shift (CLS)
+- [x] `<picture>` WebP wrapper — `webinars-and-training.njk` now serves `.webp` with `.jpg` fallback; career and Laura headshot images already serve `.webp` directly (no `.jpg` originals exist)
+- [x] Google Search Console verification — conditional `<meta name="google-site-verification">` tag added; populate `"gscVerificationId"` in `site.json` to activate
 - [x] `robots.txt` sitemap URL verified — points to `https://www.lceducationconsulting.com/sitemap.xml`, matches `site.url`; correct for production
 - [x] `<meta name="description">` per page — all pages have unique `description` in front matter; `head.njk` uses it with a site-level fallback
 - [x] Sitemap `priority` and `changefreq` — homepage `1.0`/`weekly`, all other pages `0.8`/`monthly`
@@ -63,6 +117,8 @@
 - [x] Ensure WCAG text spacing is fully implemented (line height 1.5×, paragraph spacing 2×, letter spacing 0.12em, word spacing 0.16em)
 - [x] Focus outline mixin — `@mixin focus-outline($color)` implemented in `src/scss/_variables.scss`
 - [x] `prefers-reduced-motion`, `prefers-contrast`, `forced-colors` — all respected in CSS
+
+---
 
 ## Obsolete
 

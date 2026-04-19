@@ -4,6 +4,49 @@ All significant changes to the LC Education Consulting site, newest first.
 
 ---
 
+## 2026-04-18 — A11y fixes, content links, and image improvements
+
+### `src/_includes/layouts/webinars-and-training.njk`
+
+- Fixed duplicate heading text — `<h2>` was rendering `{{ intro.heading }}` ("Webinars and Training"), identical to the `<h1>` in the page wrapper; now renders `{{ trainings_heading }}` ("Training Topics")
+- Added `<picture>` wrapper with `<source type="image/webp">` so browsers that support WebP receive the `.webp` version; `.jpg` remains as fallback
+- Added `width="600" height="400"` to prevent cumulative layout shift (CLS)
+
+### `src/content/webinars-and-training.md`
+
+- Added `trainings_heading: "Training Topics"` front matter field to support the heading fix above
+
+### `src/_includes/layouts/why-choose-us.njk`
+
+- Added `width="600" height="400"` to the career photo (`about-career.webp`) to prevent CLS
+- Added `| safe` filter to `{{ paragraph | safe }}` so HTML in frontmatter strings (e.g., anchor tags) renders correctly rather than being escaped
+
+### `src/_includes/layouts/our-story.njk`
+
+- Added `| safe` filter to `{{ paragraph | safe }}` for the same reason
+
+### `src/content/our-story.md`
+
+- Added internal links in body copy: "web accessibility evaluations" links to `/accessibility-services/`; "webinars and training" links to `/webinars-and-training/`
+
+### `src/content/why-choose-us.md`
+
+- Added internal link: "digital accessibility knowledge" links to `/accessibility-services/`
+
+### `src/scss/_variables.scss`
+
+- Added `$color-placeholder: #6b6b6b` — dedicated token for form placeholder text; ~5.3:1 contrast on white (WCAG AA pass). Previous value `$color-gray` (#a9a9a9) was ~2.35:1 (WCAG fail)
+
+### `src/scss/_forms.scss`
+
+- Changed `::placeholder` color from `$color-gray` to `$color-placeholder` in both `.form-input` and `.form-textarea`
+
+### `src/_includes/partials/head.njk` — GSC
+
+- Added conditional `<meta name="google-site-verification">` — renders only when `site.gscVerificationId` is set
+
+---
+
 ## 2026-04-18 — SEO enhancements
 
 ### `src/_includes/partials/head.njk`

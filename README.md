@@ -63,7 +63,7 @@ The `docs/` directory is maintained as a first-class part of the project, not an
 
 | File | Purpose |
 | ---- | ------- |
-| [`docs/TODO.md`](docs/TODO.md) | Prioritized task list — Must Fix, Before Launch, Should Do, Nice to Have, Needs Laura |
+| [`docs/TODO.md`](docs/TODO.md) | Prioritized task list — Blockers, Before Launch, Security, Optimization, AT Testing, Nice to Have |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Technical change log — every meaningful code change with file references |
 | [`docs/UPDATES.md`](docs/UPDATES.md) | Plain-language site updates — written for non-technical stakeholders (Laura) |
 | [`docs/CONTENT_SUGGESTIONS.md`](docs/CONTENT_SUGGESTIONS.md) | Prioritized copy review — grammar, accuracy, jargon, ESL/readability flags |
@@ -235,6 +235,7 @@ All spacing, color, and typography values are defined as Sass variables in `src/
 | `$color-primary-dark` | `#364519` | Dark green — hover states |
 | `$color-primary-light` | `#e3fcc2` | Light green — card backgrounds |
 | `$color-accent` | `#1e4d7b` | Steel blue — banner sections |
+| `$color-placeholder` | `#6b6b6b` | Form placeholder text — 5.3:1 on white (WCAG AA) |
 | `$font-size-page-title` | `1.875rem` | Page/section title headings |
 | `$space-24px` | `24px` | Standard component spacing |
 | `$space-32px` | `32px` | Section-level spacing |

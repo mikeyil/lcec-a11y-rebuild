@@ -4,6 +4,25 @@ A plain-language record of what has changed on the site — features, content, a
 
 ---
 
+## April 18, 2026 — Accessibility fixes and page improvements
+
+### Accessibility fixes
+
+- **Placeholder text in forms is now readable for low-vision users.** The light gray placeholder text in the contact form fields did not meet the minimum contrast ratio required by WCAG. It has been replaced with a darker shade that passes the standard.
+- **The Webinars & Training page heading structure was incorrect.** The section heading "Training Topics" and the page title were both labeled at the same level, which confuses screen reader navigation. This is now fixed.
+
+### Page links
+
+- The **Our Story** page now links directly to the Accessibility Services and Webinars & Training pages where those services are mentioned in the text.
+- The **Why Choose Us** page now links to Accessibility Services where digital accessibility is mentioned.
+
+### Faster image loading
+
+- The Webinars & Training page photo now loads in a modern image format (WebP) for browsers that support it, with a JPEG fallback for older browsers. This reduces the image file size and improves page load time.
+- Dimension hints have been added to the Webinars & Training and Why Choose Us photos so the browser can reserve the correct space before the images load, preventing the page from jumping around (layout shift) while loading.
+
+---
+
 ## April 18, 2026
 
 ### Search appearance improvements
