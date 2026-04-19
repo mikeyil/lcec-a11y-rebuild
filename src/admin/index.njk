@@ -13,5 +13,18 @@ eleventyExcludeFromCollections: true
   </head>
   <body>
     <script src="decap-cms.js"></script>
+    <script>
+      (function () {
+        var lastH1 = null;
+        new MutationObserver(function () {
+          var h1 = document.querySelector('#nc-root h1');
+          if (h1 && h1 !== lastH1) {
+            lastH1 = h1;
+            h1.setAttribute('tabindex', '-1');
+            h1.focus({ preventScroll: false });
+          }
+        }).observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>
