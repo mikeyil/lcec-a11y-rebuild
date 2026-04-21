@@ -55,7 +55,6 @@
 .section--blue {
   background-color: $color-accent;
   color: $color-white;
-  padding: $space-16px 0;
   text-align: center;
 
   p {
@@ -63,6 +62,18 @@
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-xl;
+    }
+
+    a {
+      color: $color-primary-light;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &:focus {
+        outline-color: $color-primary-light;
+      }
     }
   }
 

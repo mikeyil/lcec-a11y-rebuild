@@ -26,7 +26,6 @@
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-base;
-    padding: $space-8px $space-24px;
     width: auto;
   }
 }
@@ -57,6 +56,10 @@
     border-color: $color-white;
     color: $color-text;
   }
+
+  &:focus {
+    @include focus-outline($color-white);
+  }
 }
 
 .btn--outline {
@@ -68,18 +71,12 @@
     color: inherit;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
     color: $color-white;
   }
-}
-
-// ─── Card Base ───────────────────────────────────────────────────────────────
-.card {
-  background-color: $color-white;
-  box-shadow: $shadow-card;
-  color: $color-text;
-  padding: $space-32px;
 }
 
 // ─── List Utility ────────────────────────────────────────────────────────────
@@ -344,10 +341,6 @@
 
 // ─── CTA Block ────────────────────────────────────────────────────────────────
 
-.section--blue .cta-block__subheading {
-  color: $color-white;
-}
-
 .cta-block {
   padding: $space-16px $space-24px;
   text-align: center;
@@ -368,13 +361,17 @@
     font-size: $font-size-base;
     margin-bottom: $space-24px;
 
+    .section--blue & {
+      color: $color-white;
+    }
+
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-lg;
     }
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding: $space-24px $space-24px;
+    padding: $space-24px;
   }
 }
 

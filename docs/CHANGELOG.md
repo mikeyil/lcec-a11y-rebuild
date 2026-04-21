@@ -4,50 +4,60 @@ All significant changes to the LC Education Consulting site, newest first.
 
 ---
 
-## 2026-04-19 — Decap CMS setup, config audit, and UI fixes
+## 2026-04-21 — DRY pass, CMS-readiness, and README restructuring
 
-### `src/admin/config.yml` *(new on dev branch)*
+### Templates
 
-- Full collections config written from scratch: Getting Started, Settings (site, office, announcement, cta, navigation), Testimonials, Pages (all 9 content pages)
-- **Audit fixes:**
-  - Added `trainings_heading` field to webinars-and-training collection (was in frontmatter but missing from config — would have been silently dropped on CMS save)
-  - Added missing `site.json` fields: `calendar_url` (position 3), `gaId`, `linkedinUrl`, `googleBusinessUrl`, `founderUrl`, `gscVerificationId`
-  - Removed `cta_primary_url` from homepage hero (field does not exist in frontmatter)
-  - All CTA `button_url` fields: set `required: false`; updated hint to clarify fallback behavior
-  - Changed `announcement.body` from `widget: string` to `widget: text` (multiline)
-  - Added HTML preservation warnings to our-story and why-choose-us body paragraph hints
-- Added "Getting Started" as first collection with a single `guide.md` file entry
+- `partials/header.njk`, `partials/footer.njk`, `layouts/contact.njk` — replaced hardcoded `"LC Education Consulting"` with `{{ site.name }}` in logo text, footer brand, copyright line, and Web3Forms `subject`/`from_name` hidden inputs
 
-### `src/admin/guide.md` *(new)*
+### SCSS
 
-- CMS in-app guide: explains how to save, what each section does, tips for HTML-in-paragraphs fields, and developer contact
-- `permalink: false` + `eleventyExcludeFromCollections: true` prevent Eleventy from rendering it as a page
-- Body content is below the `---` delimiter (required for `widget: markdown` to read it)
-- Copied to `lcec-prod/main` so the GitHub-backed CMS can read it
+- `_variables.scss` — added `@mixin link-state-primary` (hover/focus on light backgrounds) and `@mixin link-state-on-dark` (hover/focus on dark backgrounds)
+- `_nav.scss` — replaced four identical hover/focus blocks in `.nav__link`, `.nav__dropdown-btn`, `.nav__dropdown-link`, `.mobile-nav__link` with `@include link-state-primary`
+- `_footer.scss` — replaced hover/focus blocks in `.footer-nav__link` and `.footer-brand, .footer-phone a` with `@include link-state-on-dark`
 
-### `src/admin/custom.css` *(new on dev branch)*
+### Docs
 
-- Branding overrides: replaces Decap's default blue with LC Education Consulting olive green (`#556b2f`)
-- WCAG 2.2 AA focus indicators: `box-shadow` inset rings on buttons/links; white ring inside the olive header
-- **Centering fix:** replaced broken class-wildcard selectors (`[class*="AppMainContainer"]` etc.) with `#nc-root` flex column layout — makes `#nc-root` a `flex-direction: column; align-items: center` container; first child (header) stays full-width; all subsequent children capped at 1200px
+- `README.md` — moved "About This Build" section (Accessibility, Security, Performance, SEO, Documentation) to `docs/ABOUT_BUILD.md`; replaced with a single-line link
+- `docs/ABOUT_BUILD.md` — new file containing the full build methodology documentation
 
-### `src/admin/index.njk` *(new on dev branch)*
+---
 
-- CMS admin shell: loads self-hosted `decap-cms.js` (copied from node_modules at build time)
-- `<meta name="robots" content="noindex">` — excluded from search indexing
+## 2026-04-21 — UI fixes, accessibility, and code consolidation
 
-### `.eleventy.js`
+### Accessibility
 
-- Added passthrough copies for `src/admin/config.yml`, `src/admin/custom.css`, and `node_modules/decap-cms/dist/decap-cms.js → admin/decap-cms.js`
+- `_layout.scss` — Links inside `.section--blue p` now use `$color-primary-light` (#e3fcc2) — 7.9:1 contrast against the blue background; hover goes to white
+- `_hero.scss` — `.btn--primary:focus` inside `.hero__actions` now uses a white outline (was dark green, low contrast against the olive background)
+- `_components.scss` — `.btn--ghost:focus` now uses a white outline; `.btn--outline:focus` now fills with `$color-primary-dark` and sets `border-color` to match, consistent with hover
 
-### `src/_data/testimonials.json`
+### Visual fixes
 
-- Fixed structure from plain array `[...]` to `{ "items": [...] }` to match CMS config's `name: items` list mapping
+- `src/_includes/layouts/*.njk` — Six section headings across four pages (Our Philosophy, Professional Background, Why LC Education Consulting, Training Topics, Start a Conversation, Contact Us) changed to `content-blocks__heading text-uppercase` to match the "Featured Projects" reference style
+- `_utilities.scss` — `.section--flush-top .content-blocks__heading` now has `margin-top: 0` so headings on flush sections (Why Choose Us, Contact) don't add unwanted top gap
+- `_sections.scss` — `content-blocks__grid` spacing changed from `padding-bottom` to `margin-bottom: $space-32px` for consistent spacing below service grids
+- `_sections.scss` — `credentials-layout__photo` now has `margin-top: $space-32px` at all sizes, aligning the photo with the heading on the text side
+- `_forms.scss` — Removed top padding from `.contact-form-section`; added `.contact-office` block for spacing around the office/phone/email heading
 
-### `.github/workflows/pages-main.yml` (lcec-dev)
+### Data fixes
 
-- Changed trigger from `branches: ["main"]` to `branches: ["dev"]` — lcec-dev staging now deploys from the `dev` branch
-- lcec-dev/main deleted to avoid confusion; `dev` is the default branch
+- `partials/social-section.njk` — LinkedIn URL was hardcoded; now uses `{{ site.linkedinUrl }}` from `site.json`
+
+### CSS consolidation
+
+- `_typography.scss` — Removed unused `%heading-section-base`, `.heading--section`, and `.detail-heading` (all templates migrated to `content-blocks__heading`)
+- `_components.scss` — Removed unused `.card` class
+- `_components.scss` — Removed redundant `padding` declaration from `.btn` desktop media query (identical to base)
+- `_components.scss` — Moved floating `.section--blue .cta-block__subheading` rule inside `.cta-block` as a contextual modifier; simplified desktop padding shorthand
+- `_forms.scss` — Submit button `:focus` now uses `@include focus-outline($color-primary, $radius: true)` instead of raw properties
+- `_sections.scss` — Replaced five hard-coded spacing values (`1rem`, `1.5rem`, `0.5rem`) with `$space-*` tokens
+- `_sections.scss` — Removed redundant `font-size: $font-size-base` in `bio-layout__body` desktop breakpoint (same as base value); `margin-top: 1rem` → `$space-16px`
+- `_layout.scss` — Removed redundant `padding: $space-16px 0` from `.section--blue` (already provided by `.section`)
+
+### JS consolidation
+
+- `utils/dom.js` — Added `handleFocusTrap(container, event, selector?)` utility
+- `main.js` — Both `initNavigation` and `initExitModal` now use `handleFocusTrap` instead of duplicated inline focus-trap logic
 
 ---
 

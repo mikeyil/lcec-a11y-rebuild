@@ -112,6 +112,10 @@
       width: 100%;
     }
 
+    .btn--primary:focus {
+      @include focus-outline($color-white);
+    }
+
     @media (min-width: #{$bp-tablet + 1px}) {
       align-items: center;
       flex-direction: row;

@@ -86,3 +86,25 @@ $radius-primary: 0.5em;
     border-radius: $focus-outline-radius;
   }
 }
+
+// Shared hover/focus for nav links on light backgrounds
+@mixin link-state-primary {
+  &:hover { color: $color-primary; }
+
+  &:focus {
+    color: $color-primary;
+
+    @include focus-outline($color-primary);
+  }
+}
+
+// Shared hover/focus for links on dark backgrounds (footer, blue sections)
+@mixin link-state-on-dark {
+  &:hover { color: $color-primary-light; }
+
+  &:focus {
+    color: $color-white;
+
+    @include focus-outline($color-white);
+  }
+}
