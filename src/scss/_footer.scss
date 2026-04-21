@@ -65,15 +65,7 @@
       color: inherit;
     }
 
-    &:hover {
-      color: $color-primary-light;
-    }
-
-    &:focus {
-      color: $color-white;
-
-      @include focus-outline($color-white);
-    }
+    @include link-state-on-dark;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-base;
@@ -100,15 +92,7 @@
     text-decoration: none;
     transition: color $transition-quick;
 
-    &:hover {
-      color: $color-primary-light;
-    }
-
-    &:focus {
-      color: $color-white;
-
-      @include focus-outline($color-white);
-    }
+    @include link-state-on-dark;
   }
 }
 

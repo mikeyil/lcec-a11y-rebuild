@@ -188,15 +188,7 @@
   text-transform: uppercase;
   transition: $transition-base;
 
-  &:hover {
-    color: $color-primary;
-  }
-
-  &:focus {
-    color: $color-primary;
-
-    @include focus-outline($color-primary);
-  }
+  @include link-state-primary;
 
   &.nav__link--active,
   &[aria-current="page"] {
@@ -222,15 +214,7 @@
   text-transform: uppercase;
   transition: $transition-base;
 
-  &:hover {
-    color: $color-primary;
-  }
-
-  &:focus {
-    color: $color-primary;
-
-    @include focus-outline($color-primary);
-  }
+  @include link-state-primary;
 
   svg {
     color: $color-text-medium;
@@ -284,15 +268,7 @@
   text-decoration: none;
   transition: $transition-base;
 
-  &:hover {
-    color: $color-primary;
-  }
-
-  &:focus {
-    color: $color-primary;
-
-    @include focus-outline($color-primary);
-  }
+  @include link-state-primary;
 
   span {
     flex: 1;
@@ -397,15 +373,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
-    color: $color-primary;
-  }
-
-  &:focus {
-    color: $color-primary;
-
-    @include focus-outline($color-primary);
-  }
+  @include link-state-primary;
 
   &[aria-current="page"] {
     font-weight: 700;
