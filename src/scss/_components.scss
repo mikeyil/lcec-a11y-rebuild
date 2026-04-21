@@ -57,6 +57,10 @@
     border-color: $color-white;
     color: $color-text;
   }
+
+  &:focus {
+    @include focus-outline($color-white);
+  }
 }
 
 .btn--outline {
