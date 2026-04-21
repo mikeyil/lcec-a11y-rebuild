@@ -4,6 +4,25 @@ All significant changes to the LC Education Consulting site, newest first.
 
 ---
 
+## 2026-04-21 — DRY pass, CMS-readiness, and README restructuring
+
+### Templates
+
+- `partials/header.njk`, `partials/footer.njk`, `layouts/contact.njk` — replaced hardcoded `"LC Education Consulting"` with `{{ site.name }}` in logo text, footer brand, copyright line, and Web3Forms `subject`/`from_name` hidden inputs
+
+### SCSS
+
+- `_variables.scss` — added `@mixin link-state-primary` (hover/focus on light backgrounds) and `@mixin link-state-on-dark` (hover/focus on dark backgrounds)
+- `_nav.scss` — replaced four identical hover/focus blocks in `.nav__link`, `.nav__dropdown-btn`, `.nav__dropdown-link`, `.mobile-nav__link` with `@include link-state-primary`
+- `_footer.scss` — replaced hover/focus blocks in `.footer-nav__link` and `.footer-brand, .footer-phone a` with `@include link-state-on-dark`
+
+### Docs
+
+- `README.md` — moved "About This Build" section (Accessibility, Security, Performance, SEO, Documentation) to `docs/ABOUT_BUILD.md`; replaced with a single-line link
+- `docs/ABOUT_BUILD.md` — new file containing the full build methodology documentation
+
+---
+
 ## 2026-04-21 — UI fixes, accessibility, and code consolidation
 
 ### Accessibility
