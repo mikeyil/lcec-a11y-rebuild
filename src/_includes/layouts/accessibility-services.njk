@@ -15,7 +15,7 @@ layout: page-with-intro.njk
           {% endfor %}
         </ul>
         {% if service.case_study %}
-        <p>{{ service.case_study }}</p>
+        <p>{{ service.case_study | safe }}</p>
         {% endif %}
       </article>
       {% endfor %}
