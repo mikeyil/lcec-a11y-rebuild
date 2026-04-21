@@ -103,9 +103,7 @@
   width: 100%;
 
   &:focus {
-    outline: 2px solid $color-primary;
-    outline-offset: $focus-outline-offset;
-    border-radius: $focus-outline-radius;
+    @include focus-outline($color-primary, $radius: true);
   }
 }
 

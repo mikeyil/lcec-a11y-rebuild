@@ -26,7 +26,6 @@
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-base;
-    padding: $space-8px $space-24px;
     width: auto;
   }
 }
@@ -292,10 +291,6 @@
 
 // ─── CTA Block ────────────────────────────────────────────────────────────────
 
-.section--blue .cta-block__subheading {
-  color: $color-white;
-}
-
 .cta-block {
   padding: $space-16px $space-24px;
   text-align: center;
@@ -316,13 +311,17 @@
     font-size: $font-size-base;
     margin-bottom: $space-24px;
 
+    .section--blue & {
+      color: $color-white;
+    }
+
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-lg;
     }
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding: $space-24px $space-24px;
+    padding: $space-24px;
   }
 }
 
