@@ -45,12 +45,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   eleventyConfig.addPassthroughCopy({ "manifest.webmanifest": "manifest.webmanifest" });
 
-  eleventyConfig.addGlobalData("site", {
-    name: "LC Education Consulting",
-    url: "https://www.lceducationconsulting.com",
-    description: "Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.",
-  });
-
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
     dir: {

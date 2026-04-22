@@ -2,29 +2,29 @@
 {% if site.gscVerificationId %}<meta name="google-site-verification" content="{{ site.gscVerificationId }}" />{% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {% set _pageTitle = page.url | pathToTitle %}
-<title>{% if _pageTitle %}{{ _pageTitle }} | LC Education Consulting{% else %}LC Education Consulting{% endif %}</title>
-<meta name="description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
-<meta name="author" content="LC Education Consulting" />
+<title>{% if _pageTitle %}{{ _pageTitle }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+<meta name="author" content="{{ site.name }}" />
 <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="LC Education Consulting" />
-<meta property="og:title" content="{% if _pageTitle %}{{ _pageTitle }} | LC Education Consulting{% else %}LC Education Consulting{% endif %}" />
-<meta property="og:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{% if _pageTitle %}{{ _pageTitle }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}" />
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="og:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% else %}/img/og-image.png{% endif %}" />
-<meta property="og:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}LC Education Consulting{% endif %}" />
+<meta property="og:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}{{ site.name }}{% endif %}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{% if _pageTitle %}{{ _pageTitle }} | LC Education Consulting{% else %}LC Education Consulting{% endif %}" />
-<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
+<meta name="twitter:title" content="{% if _pageTitle %}{{ _pageTitle }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}" />
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
 <meta name="twitter:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% else %}/img/og-image.png{% endif %}" />
-<meta name="twitter:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}LC Education Consulting{% endif %}" />
+<meta name="twitter:image:alt" content="{% if og_image_alt %}{{ og_image_alt }}{% else %}{{ site.name }}{% endif %}" />
 
 <!-- JSON-LD: Business schema -->
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "url": "{{ site.url }}",
   "telephone": "{{ site.phone }}",
   "email": "{{ site.email }}",
-  "description": "Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.",
+  "description": "{{ site.description }}",
   "foundingDate": "{{ site.foundingDate }}",
   "founder": {
     "@type": "Person",
