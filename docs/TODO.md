@@ -65,6 +65,7 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 
 ## Nice to Have
 
+- [ ] **Dark mode / `color-scheme`** `[a11y]` `[optimization]` — declare `<meta name="color-scheme" content="light dark">` and a `prefers-color-scheme: dark` CSS block to opt the site into OS-level dark mode; design tokens make this straightforward but requires contrast checks on all color pairs in dark context
 - [ ] **Web3Forms `from_name`** `[content]` — JS snippet to sync the `your_name` field into the hidden `from_name` input before submit, so Laura's inbox shows the submitter's name instead of "LC Education Consulting"
 - [ ] **Review schema** `[seo]` — once Google Business reviews exist, add `AggregateRating` to the `ProfessionalService` schema for potential star rating rich results
 
